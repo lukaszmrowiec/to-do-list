@@ -1,5 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
-import { MatTableDataSource, MatSort } from "@angular/material";
+import { MatPaginator, MatTableDataSource, MatSort } from "@angular/material";
 import { MatSortModule } from "@angular/material/sort";
 
 @Component({
@@ -12,9 +12,11 @@ export class ToDoListComponent {
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngOnInit() {
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
 
   applyFilter(filterValue: string) {

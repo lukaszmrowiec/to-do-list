@@ -6,6 +6,7 @@ import { MatTableModule} from '@angular/material';
 import {MatSortModule} from '@angular/material/sort';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 import { AppComponent } from "./app.component";
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
@@ -22,13 +23,15 @@ import { ToDoListComponent } from './to-do-list/to-do-list.component';
     MatTableModule,
     MatSortModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatPaginatorModule
   ],
   exports: [
     BrowserAnimationsModule,
     MatTableModule,
     MatSortModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
