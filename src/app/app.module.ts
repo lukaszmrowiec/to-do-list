@@ -1,27 +1,33 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { MatButtonModule, MatCheckboxModule } from "@angular/material";
-import {MatTableModule} from '@angular/material/table';
-
+import { MatTableModule, MatSortModule } from '@angular/material';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material';
 
 import { AppComponent } from "./app.component";
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
 
 @NgModule({
-  declarations: [AppComponent, ToDoListComponent],
+  declarations: [
+    AppComponent,
+    ToDoListComponent
+  ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    MatTableModule
+    MatTableModule,
+    MatSortModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   exports: [
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    MatTableModule
+    MatTableModule,
+    MatSortModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
