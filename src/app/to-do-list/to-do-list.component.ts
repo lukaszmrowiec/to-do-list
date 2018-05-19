@@ -1,5 +1,6 @@
-import { Component } from "@angular/core";
-import { MatTableDataSource } from "@angular/material";
+import { Component, ViewChild } from "@angular/core";
+import { MatTableDataSource, MatSort } from "@angular/material";
+import { MatSortModule } from "@angular/material/sort";
 
 @Component({
   selector: "app-to-do-list",
@@ -9,6 +10,12 @@ import { MatTableDataSource } from "@angular/material";
 export class ToDoListComponent {
   displayedColumns = ["position", "name", "weight", "symbol"];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
+
+  @ViewChild(MatSort) sort: MatSort;
+
+  ngOnInit() {
+    this.dataSource.sort = this.sort;
+  }
 
   applyFilter(filterValue: string) {
     filterValue = filterValue.trim(); // Remove whitespace
