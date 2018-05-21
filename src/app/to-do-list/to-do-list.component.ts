@@ -2,6 +2,7 @@ import { Component, ViewChild } from "@angular/core";
 import { MatPaginator, MatTableDataSource, MatSort } from "@angular/material";
 import { MatSortModule } from "@angular/material/sort";
 
+
 @Component({
   selector: "app-to-do-list",
   templateUrl: "./to-do-list.component.html",
@@ -10,6 +11,10 @@ import { MatSortModule } from "@angular/material/sort";
 export class ToDoListComponent {
   displayedColumns = ["position", "name", "weight", "symbol"];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
+  importanceLevels = [
+    {value: 'Normal'},
+    {value: 'High'},
+  ];
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
