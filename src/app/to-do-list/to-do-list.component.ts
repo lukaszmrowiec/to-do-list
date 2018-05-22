@@ -9,12 +9,15 @@ import { MatSortModule } from "@angular/material/sort";
   styleUrls: ["./to-do-list.component.css"]
 })
 export class ToDoListComponent {
-  displayedColumns = ["position", "name", "weight", "symbol"];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  // displayedColumns = ["position", "name", "weight", "symbol"];
+  displayedColumns = ["id","name", "date"];
+  // dataSource = new MatTableDataSource(ELEMENT_DATA);
+  dataSource = new MatTableDataSource(tasks);
   importanceLevels = [
     {value: 'Normal'},
     {value: 'High'},
   ];
+  // today: Date;
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -22,12 +25,29 @@ export class ToDoListComponent {
   ngOnInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
+    this.getTasks();
   }
 
   applyFilter(filterValue: string) {
     filterValue = filterValue.trim(); // Remove whitespace
     filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
     this.dataSource.filter = filterValue;
+  }
+
+  getTasks() {
+    return tasks;
+  }
+
+  addclass(e) {
+    console.log(e);
+    console.log(tasks[0]);
+    tasks.push({
+      id: tasks.length + 1,
+      name: e,
+      date: new Date()
+    });
+    console.log(tasks.length);
+    this.dataSource.paginator = this.paginator;
   }
 }
 
@@ -60,3 +80,11 @@ const ELEMENT_DATA: Element[] = [
   { position: 19, name: "Potassium", weight: 39.0983, symbol: "K" },
   { position: 20, name: "Calcium", weight: 40.078, symbol: "Ca" }
 ];
+
+export interface Task {
+  id: number;
+  name: string;
+  date: Date
+}
+
+let tasks: Task[] = [];
