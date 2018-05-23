@@ -1,28 +1,38 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component, ViewChild, OnInit } from "@angular/core";
 import { MatPaginator, MatTableDataSource, MatSort } from "@angular/material";
 import { MatSortModule } from "@angular/material/sort";
-
+import { ToDoListService } from './to-do-list.service';
 
 @Component({
   selector: "app-to-do-list",
   templateUrl: "./to-do-list.component.html",
-  styleUrls: ["./to-do-list.component.css"]
+  styleUrls: ["./to-do-list.component.css"],
+  providers: [ToDoListService]
 })
-export class ToDoListComponent {
-  // displayedColumns = ["position", "name", "weight", "symbol"];
-  displayedColumns = ["id","name", "date", "delete"];
-  // dataSource = new MatTableDataSource(ELEMENT_DATA);
-  dataSource = new MatTableDataSource(tasks);
+export class ToDoListComponent implements OnInit {
+  toDoListArray: any[];
+  displayedColumns = ["name", "delete"];
+   dataSource = new MatTableDataSource(this.toDoListArray);
   importanceLevels = [
     {value: 'Normal'},
     {value: 'High'},
   ];
-  // today: Date;
+
+  constructor (private todoListService: ToDoListService ) {}
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngOnInit() {
+    this.todoListService.getToDoList().snapshotChanges()
+    .subscribe(item => {
+      this.toDoListArray = [];
+      item.forEach(element => {
+        const x = element.payload.toJSON();
+        x['$key'] = element.key;
+        this.toDoListArray.push(x);
+      });
+    });
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
    }
@@ -33,15 +43,16 @@ export class ToDoListComponent {
     this.dataSource.filter = filterValue;
   }
 
-  addTask(e) {
-    tasks.push({
-      id: tasks.length + 1,
-      name: e.value,
-      date: new Date()
-    });
-    e.value = null;
+  addTask(task) {
+    console.log(this.toDoListArray[0]);
+    this.todoListService.addTask(task.value);
+    task.value = null;
     this.dataSource.paginator = this.paginator;
   }
+
+  // deleteTask(){
+
+  // }
 }
 
 export interface Task {
