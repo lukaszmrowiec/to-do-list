@@ -8,6 +8,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { FormsModule } from '@angular/forms';
+import {MatCardModule} from '@angular/material/card';
 
 import { AppComponent } from "./app.component";
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
@@ -26,7 +27,8 @@ import { ToDoListComponent } from './to-do-list/to-do-list.component';
     MatFormFieldModule,
     MatInputModule,
     MatPaginatorModule,
-    FormsModule
+    FormsModule,
+    MatCardModule
   ],
   exports: [
     BrowserAnimationsModule,

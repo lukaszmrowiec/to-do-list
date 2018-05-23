@@ -1,7 +1,7 @@
 .example-container {
   display: flex;
   flex-direction: column;
-  min-width: 300px;
+  min-width: 500px;
   overflow: auto;
   max-height: 500px;
 }
@@ -9,3 +9,46 @@
 .mat-header-cell.mat-sort-header-sorted {
   color: black;
 }
+
+.header {
+  margin-top: 2%;
+  padding: 3px;
+  color: rgba(128, 128, 128, 0.726);
+
+}
+
+.taskInptArea {
+  /* background: rgba(238, 235, 235, 0.678); */
+  /* margin-left: 1%;
+  margin-right:1%; */
+  color: black;
+  width: 100%;
+}
+
+.taskList {
+  display: flex;
+  margin-top: 2%;
+  flex-direction: column;
+  min-width: 300px;
+  overflow: auto;
+  max-height: 700px;
+}
+
+.mat-header-cell.mat-sort-header-sorted {
+  color: black;
+}
+
+.separateField {
+  margin-left: 2%;
+}
+
+.spaceTop {
+  margin-top: 2%;
+}
+
+.input-field {
+  background: white;
+  margin-left: 2%;
+  font-weight: 900;
+}
+
