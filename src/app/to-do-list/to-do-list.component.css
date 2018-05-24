@@ -52,3 +52,11 @@
   font-weight: 900;
 }
 
+i {
+  cursor: pointer;
+}
+
+.importanceLlevel {
+  margin-left: 2%;
+  top: 10px;
+}

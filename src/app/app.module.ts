@@ -9,12 +9,12 @@ import { MatInputModule } from "@angular/material";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { FormsModule } from "@angular/forms";
 import { MatCardModule } from "@angular/material/card";
+import {MatSelectModule} from '@angular/material/select';
 
 import { AppComponent } from "./app.component";
 import { ToDoListComponent } from "./to-do-list/to-do-list.component";
 import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabaseModule } from "angularfire2/database";
-// import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from "../environments/environment";
 
 @NgModule({
@@ -31,8 +31,8 @@ import { environment } from "../environments/environment";
     FormsModule,
     MatCardModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
-    // AngularFirestoreModule
+    AngularFireDatabaseModule,
+    MatSelectModule
   ],
   exports: [
     BrowserAnimationsModule,
