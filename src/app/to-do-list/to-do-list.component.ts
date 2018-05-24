@@ -14,7 +14,7 @@ export class ToDoListComponent implements OnInit {
   displayedColumns = ["id","name", "date", "importance","delete"];
   dataSource;
   // counter: number = this.toDoListArray.length;
-  counter: number = 0;
+  counter: number;
   selected = 'Normal';
   importanceLlevel: string;
 
@@ -42,7 +42,7 @@ export class ToDoListComponent implements OnInit {
     this.dataSource = new MatTableDataSource(this.toDoListArray);
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
-    console.log(this.counter);
+    this.counter = this.toDoListArray.length + 1;
     return this.dataSource;
   }
 
@@ -53,10 +53,8 @@ export class ToDoListComponent implements OnInit {
   }
 
   addTask(task) {
-    this.counter++;
     this.todoListService.addTask(task.value, this.counter, this.importanceLlevel);
     task.value = null;
-    // this.importanceLlevel = this.selected;
     this.dataSource.paginator = this.paginator;
   }
 
@@ -67,10 +65,6 @@ export class ToDoListComponent implements OnInit {
   deletingTask($key: string) {
     this.todoListService.removeTask($key);
   }
-
-  // deleteTask(){
-
-  // }
 }
 
 export interface Task {
