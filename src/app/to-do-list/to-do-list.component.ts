@@ -1,7 +1,7 @@
 import { Component, ViewChild, OnInit } from "@angular/core";
 import { MatPaginator, MatTableDataSource, MatSort } from "@angular/material";
 import { MatSortModule } from "@angular/material/sort";
-import { ToDoListService } from './to-do-list.service';
+import { ToDoListService } from "./to-do-list.service";
 
 @Component({
   selector: "app-to-do-list",
@@ -12,30 +12,36 @@ import { ToDoListService } from './to-do-list.service';
 export class ToDoListComponent implements OnInit {
   toDoListArray: any[];
   displayedColumns = ["name", "delete"];
-   dataSource = new MatTableDataSource(this.toDoListArray);
-  importanceLevels = [
-    {value: 'Normal'},
-    {value: 'High'},
-  ];
+  // dataSource = new MatTableDataSource(tasks);
+  dataSource;
+  importanceLevels = [{ value: "Normal" }, { value: "High" }];
 
-  constructor (private todoListService: ToDoListService ) {}
+  constructor(private todoListService: ToDoListService) {}
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngOnInit() {
-    this.todoListService.getToDoList().snapshotChanges()
-    .subscribe(item => {
-      this.toDoListArray = [];
-      item.forEach(element => {
-        const x = element.payload.toJSON();
-        x['$key'] = element.key;
-        this.toDoListArray.push(x);
+    this.todoListService
+      .getToDoList()
+      .snapshotChanges()
+      .subscribe(item => {
+        this.toDoListArray = [];
+        item.forEach(element => {
+          const x = element.payload.toJSON();
+          x["$key"] = element.key;
+          this.toDoListArray.push(x);
+        });
+        this.getFireData();
       });
-    });
+  }
+
+  getFireData() {
+    this.dataSource = new MatTableDataSource(this.toDoListArray);
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
-   }
+    return this.dataSource;
+  }
 
   applyFilter(filterValue: string) {
     filterValue = filterValue.trim(); // Remove whitespace
@@ -44,7 +50,6 @@ export class ToDoListComponent implements OnInit {
   }
 
   addTask(task) {
-    console.log(this.toDoListArray[0]);
     this.todoListService.addTask(task.value);
     task.value = null;
     this.dataSource.paginator = this.paginator;
@@ -56,9 +61,7 @@ export class ToDoListComponent implements OnInit {
 }
 
 export interface Task {
-  id: number;
   name: string;
-  date: Date
 }
 
-let tasks: Task[] = [];
+let tasks: Task[] = [{ name: "zad1" }];
