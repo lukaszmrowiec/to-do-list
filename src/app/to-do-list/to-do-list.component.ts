@@ -11,9 +11,8 @@ import { ToDoListService } from "./to-do-list.service";
 })
 export class ToDoListComponent implements OnInit {
   toDoListArray: any[];
-  displayedColumns = ["id","name", "date", "importance","delete"];
+  displayedColumns = ["id","name", "date", "hour","importance","delete"];
   dataSource;
-  // counter: number = this.toDoListArray.length;
   counter: number;
   selected = 'Normal';
   importanceLlevel: string;

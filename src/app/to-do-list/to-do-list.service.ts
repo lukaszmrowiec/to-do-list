@@ -7,7 +7,7 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 })
 export class ToDoListService {
   toDoList: AngularFireList<any>;
-  today = Date.now();
+  today;
 
   constructor(private firebasedb: AngularFireDatabase) { }
 
@@ -16,13 +16,20 @@ export class ToDoListService {
     return this.toDoList;
   }
 
-  addTask(title: string, counter: number, importanceLlevel: string) {
+  getDate() {
+    let today = new Date();
+    return today;
+  }
+
+  addTask(title: string, counter: number, importanceLlevel) {
+    this.today = Date.now();
     this.toDoList.push({
       id: counter,
       name: title,
       date: this.today,
       importance: importanceLlevel
     });
+    console.log(this.today);
   }
 
   removeTask($key: string) {
