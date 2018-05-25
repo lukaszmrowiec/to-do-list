@@ -11,7 +11,7 @@ import { ToDoListService } from "./to-do-list.service";
 })
 export class ToDoListComponent implements OnInit {
   toDoListArray: any[];
-  displayedColumns = ["id","name", "date", "hour","priority","delete"];
+  displayedColumns = ["name", "priority","date", "delete"];
   dataSource;
   taskId: number = 0;
   // selected = 'Normal';
