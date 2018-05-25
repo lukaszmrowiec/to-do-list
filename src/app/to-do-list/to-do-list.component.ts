@@ -11,11 +11,11 @@ import { ToDoListService } from "./to-do-list.service";
 })
 export class ToDoListComponent implements OnInit {
   toDoListArray: any[];
-  displayedColumns = ["id","name", "date", "hour","importance","delete"];
+  displayedColumns = ["id","name", "date", "hour","priority","delete"];
   dataSource;
-  counter: number;
-  selected = 'Normal';
-  importanceLlevel: string;
+  taskId: number = 0;
+  // selected = 'Normal';
+  importanceLlevel: string = 'Normal';
 
   constructor(private todoListService: ToDoListService) {}
 
@@ -41,7 +41,6 @@ export class ToDoListComponent implements OnInit {
     this.dataSource = new MatTableDataSource(this.toDoListArray);
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
-    this.counter = this.toDoListArray.length + 1;
     return this.dataSource;
   }
 
@@ -52,13 +51,19 @@ export class ToDoListComponent implements OnInit {
   }
 
   addTask(task) {
-    this.todoListService.addTask(task.value, this.counter, this.importanceLlevel);
+    this.taskId++;
+    this.todoListService.addTask(task.value, this.taskId, this.importanceLlevel);
     task.value = null;
     this.dataSource.paginator = this.paginator;
   }
 
-  setimportanceLlevel(option) {
-    this.importanceLlevel = option;
+  // setimportanceLlevel(option) {
+  //   this.importanceLlevel = option;
+  // }
+
+  priorityUdate ($key: string, option: string) {
+    console.log(option);
+    this.todoListService.updateItem($key, {priority: option});
   }
 
   deletingTask($key: string) {

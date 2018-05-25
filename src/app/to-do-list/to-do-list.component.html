@@ -9,19 +9,9 @@
         <h5>
           <input matInput placeholder="Enter task" #task (keyup.enter)="addTask(task)">
         </h5>
-      </mat-form-field>
 
-      <mat-form-field class="importanceLlevel ">
-        <mat-select [(value)]="selected" placeholder="Importance level">
-          <mat-option value="Normal" #opt1 (click)="setimportanceLlevel(opt1.value)">Normal</mat-option>
-          <mat-option value="High" #opt2 (click)="setimportanceLlevel(opt2.value)">High</mat-option>
-          <mat-option value="Very High" #opt3 (click)="setimportanceLlevel(opt3.value)">Very High</mat-option>
-        </mat-select>
       </mat-form-field>
-      <div class="text-center">
-        <i class="material-icons separateField" (click)="addTask(task)"> add</i>
-      </div>
-
+      <i class="material-icons separateField" (click)="addTask(task)"> add</i>
     </form>
   </mat-card-content>
 </mat-card>
@@ -51,27 +41,37 @@
 
       <!-- Date Column -->
       <ng-container matColumnDef="date">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Creation date </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Creation date</th>
         <td mat-cell *matCellDef="let element"> {{element.date | date:'yyyy-MM-dd'}} </td>
       </ng-container>
 
       <!-- Date Column -->
       <ng-container matColumnDef="hour">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Creation hour </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Creation hour</th>
         <td mat-cell *matCellDef="let element"> {{element.date | date:'HH:mm:ss'}} </td>
       </ng-container>
 
       <!-- Symbol Column -->
       <ng-container matColumnDef="delete">
-        <th mat-header-cell *matHeaderCellDef> Delete </th>
+        <th mat-header-cell *matHeaderCellDef>Delete</th>
         <td mat-cell *matCellDef="let element">
           <i class="material-icons" (click)="deletingTask(element.$key)"> delete</i>
         </td>
       </ng-container>
 
-      <ng-container matColumnDef="importance">
-        <th mat-header-cell *matHeaderCellDef> Importance Level </th>
-        <td mat-cell *matCellDef="let element"> {{ element.importance }} </td>
+      <ng-container matColumnDef="priority">
+        <th mat-header-cell *matHeaderCellDef>Priority</th>
+        <td mat-cell *matCellDef="let element">
+          <form>
+            <mat-form-field >
+              <mat-select placeholder= {{element.priority}} >
+                <mat-option value= "Normal" #opt1 (click)="priorityUdate(element.$key, opt1.value)">Normal</mat-option>
+                <mat-option value= "High" #opt2 (click)="priorityUdate(element.$key, opt2.value)">High</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </form>
+        </td>
+
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

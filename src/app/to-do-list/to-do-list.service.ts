@@ -21,15 +21,18 @@ export class ToDoListService {
     return today;
   }
 
-  addTask(title: string, counter: number, importanceLlevel) {
+  addTask(title: string, taskId: number, importanceLlevel) {
     this.today = Date.now();
     this.toDoList.push({
-      id: counter,
+      id: taskId,
       name: title,
       date: this.today,
-      importance: importanceLlevel
+      priority: importanceLlevel
     });
-    console.log(this.today);
+  }
+
+  updateItem(key: string, value: any) {
+    this.toDoList.update(key, value);
   }
 
   removeTask($key: string) {
