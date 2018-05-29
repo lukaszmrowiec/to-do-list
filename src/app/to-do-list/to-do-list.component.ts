@@ -2,6 +2,8 @@ import { Component, ViewChild, OnInit } from "@angular/core";
 import { MatPaginator, MatTableDataSource, MatSort } from "@angular/material";
 import { MatSortModule } from "@angular/material/sort";
 import { ToDoListService } from "./to-do-list.service";
+import {FormControl} from '@angular/forms';
+import {TooltipPosition} from '@angular/material';
 
 @Component({
   selector: "app-to-do-list",
@@ -11,11 +13,13 @@ import { ToDoListService } from "./to-do-list.service";
 })
 export class ToDoListComponent implements OnInit {
   toDoListArray: any[];
-  displayedColumns = ["name", "priority","date", "delete"];
+  displayedColumns = ["name"];
+  // displayedColumns = ["name", "priority","date", "delete"];
   dataSource;
   taskId: number = 0;
-  // selected = 'Normal';
   importanceLlevel: string = 'Normal';
+  events: string[] = [];
+  checkColumn: boolean = true;
 
   constructor(private todoListService: ToDoListService) {}
 
@@ -35,6 +39,16 @@ export class ToDoListComponent implements OnInit {
         });
         this.getFireData();
       });
+  }
+
+  showColumns() {
+    if(this.checkColumn) {
+      this.displayedColumns = ["name", "priority","date", "delete"];
+      this.checkColumn = false;
+    } else {
+      this.displayedColumns = ["name"];
+      this.checkColumn = true;
+    }
   }
 
   getFireData() {
@@ -70,9 +84,3 @@ export class ToDoListComponent implements OnInit {
     this.todoListService.removeTask($key);
   }
 }
-
-export interface Task {
-  name: string;
-}
-
-let tasks: Task[] = [{ name: "zad1" }];
