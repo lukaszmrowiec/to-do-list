@@ -6,12 +6,12 @@
   right: 0;
 } */
 
-.example-events {
+/* .example-events {
   width: 300px;
   height: 200px;
   overflow: auto;
   border: 1px solid #555;
-}
+} */
 
 th {
   background: rgba(173, 173, 173, 0.562);
@@ -24,17 +24,22 @@ td {
   font-size: 90%;
 }
 
-
 .mat-header-cell.mat-sort-header-sorted {
   color: black;
 }
 
 .header {
-  margin-top: 2%;
-  padding: 3px;
+  /* margin-top: 1%; */
+  /* padding: 2px; */
   color: rgba(128, 128, 128, 0.726);
   text-align: center;
+  height: 2%;
+  /* background: rgba(211, 211, 125, 0.678); */
+}
 
+.header h3 {
+  padding: 0;
+  margin: 0px;
 }
 
 .taskInptArea {
@@ -44,6 +49,11 @@ td {
   color: black;
   width: 100%;
   font-size: 120%;
+}
+
+.taskPlus {
+  font-size: 200%;
+  margin-left: 2%;
 }
 
 .inputField {
@@ -71,7 +81,6 @@ td {
 
 .taskListArea {
   margin-left: 2%;
-
 }
 
 /* .spaceTop {

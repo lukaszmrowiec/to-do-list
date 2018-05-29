@@ -1,23 +1,21 @@
 <!-- Header -->
 <mat-card class="header">
   <mat-card-title>
-    <h3>To Do List</h3>
+    <h3>To Do List -v.8</h3>
   </mat-card-title>
 
   <mat-card-content class="taskInptArea">
-    <form class="taskInptArea">
+    <form>
       <mat-form-field class="inputField">
-
         <input matInput placeholder="Enter task" #task (keyup.enter)="addTask(task)">
-
       </mat-form-field>
-      <i class="material-icons separateField" (click)="addTask(task)"> add</i>
+      <i class="material-icons taskPlus" (click)="addTask(task)"> add</i>
     </form>
   </mat-card-content>
 </mat-card>
 <!-- /Header -->
 
-<div class="example-container mat-elevation-z8 taskList">
+<div class="mat-elevation-z8 taskList">
 
   <div class="header2">
     <mat-form-field class="searchField">
