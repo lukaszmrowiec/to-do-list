@@ -10,11 +10,10 @@ import { MatPaginatorModule } from "@angular/material/paginator";
 import { FormsModule } from "@angular/forms";
 import { MatCardModule } from "@angular/material/card";
 import {MatSelectModule} from '@angular/material/select';
-// import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-// import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatRadioModule} from '@angular/material/radio';
 
 import { AppComponent } from "./app.component";
 import { ToDoListComponent } from "./to-do-list/to-do-list.component";
@@ -38,11 +37,11 @@ import { environment } from "../environments/environment";
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     MatSelectModule,
-    // MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
-    MatCheckboxModule
-    // MatTooltipModule
+    MatCheckboxModule,
+    MatRadioModule
+
   ],
   // exports: [
   //   BrowserAnimationsModule,

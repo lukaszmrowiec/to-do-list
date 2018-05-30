@@ -62,6 +62,50 @@ td {
   font-weight: 900;
 }
 
+.header2 {
+  /* background: rgba(94, 80, 64, 0.699); */
+  margin-left: 2%;
+  /* margin-top: 2%; */
+  display: flex;
+  width: 95%;
+  max-width: 100%;
+  margin: auto;
+}
+
+.searchField {
+  /* background: rgba(192, 189, 185, 0.397); */
+  /* display: inline-flex; */
+  width: 20%;
+}
+
+.columns {
+  /* width: 7%; */
+  margin: auto;
+  /* background: green; */
+  /* margin-right: 1%; */
+}
+
+.columnSwitcher {
+  display: block;
+  padding-top: 2%;
+  font-size: 90%;
+  /* background: yellow; */
+}
+
+.spaceTop {
+  margin-top: 5px;;
+}
+
+.spaceleft {
+  margin-left: 5px;
+}
+
+.header2Space {
+  /* background: rgba(192, 189, 185, 0.397); */
+  width: 85%;
+}
+
+
 .taskList {
   display: flex;
   margin-top: 2%;
@@ -82,10 +126,6 @@ td {
 .taskListArea {
   margin-left: 2%;
 }
-
-/* .spaceTop {
-  margin-top: 2%;
-} */
 
 i {
   cursor: pointer;
@@ -123,32 +163,4 @@ i {
   width: 80px;
   min-width: 80px;
   right: 5px;
-}
-
-.header2 {
-  /* background: rgba(94, 80, 64, 0.699); */
-  margin-left: 2%;
-  margin-top: 2%;
-  display: flex;
-  width: 95%;
-  max-width: 100%;
-  margin: auto;
-}
-
-.searchField {
-  /* background: rgba(192, 189, 185, 0.397); */
-  /* display: inline-flex; */
-  width: 200px;
-}
-
-.columnSwitch {
-  display: inline-flex;
-  width: 80%;
-  margin: auto;
-  font-size: 200%;
-}
-
-.header2Space {
-  /* background: rgba(192, 189, 185, 0.397); */
-  width: 730%;
 }

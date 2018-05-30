@@ -2,8 +2,8 @@ import { Component, ViewChild, OnInit } from "@angular/core";
 import { MatPaginator, MatTableDataSource, MatSort } from "@angular/material";
 import { MatSortModule } from "@angular/material/sort";
 import { ToDoListService } from "./to-do-list.service";
-import {FormControl} from '@angular/forms';
-import {TooltipPosition} from '@angular/material';
+import { FormControl } from "@angular/forms";
+import { TooltipPosition } from "@angular/material";
 
 @Component({
   selector: "app-to-do-list",
@@ -17,9 +17,8 @@ export class ToDoListComponent implements OnInit {
   // displayedColumns = ["name", "priority","date", "delete"];
   dataSource;
   taskId: number = 0;
-  importanceLlevel: string = 'Normal';
+  importanceLlevel: string = "Normal";
   events: string[] = [];
-  checkColumn: boolean = true;
 
   constructor(private todoListService: ToDoListService) {}
 
@@ -42,13 +41,11 @@ export class ToDoListComponent implements OnInit {
   }
 
   showColumns() {
-    if(this.checkColumn) {
-      this.displayedColumns = ["name", "priority","date", "delete"];
-      this.checkColumn = false;
-    } else {
-      this.displayedColumns = ["name"];
-      this.checkColumn = true;
-    }
+    this.displayedColumns = ["name", "priority", "date", "delete"];
+  }
+
+  hideColumns() {
+    this.displayedColumns = ["name"];
   }
 
   getFireData() {
@@ -66,7 +63,11 @@ export class ToDoListComponent implements OnInit {
 
   addTask(task) {
     this.taskId++;
-    this.todoListService.addTask(task.value, this.taskId, this.importanceLlevel);
+    this.todoListService.addTask(
+      task.value,
+      this.taskId,
+      this.importanceLlevel
+    );
     task.value = null;
     this.dataSource.paginator = this.paginator;
   }
@@ -75,9 +76,9 @@ export class ToDoListComponent implements OnInit {
   //   this.importanceLlevel = option;
   // }
 
-  priorityUdate ($key: string, option: string) {
+  priorityUdate($key: string, option: string) {
     console.log(option);
-    this.todoListService.updateItem($key, {priority: option});
+    this.todoListService.updateItem($key, { priority: option });
   }
 
   deletingTask($key: string) {

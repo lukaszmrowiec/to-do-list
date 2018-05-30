@@ -22,9 +22,18 @@
       <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
     </mat-form-field>
     <p class="header2Space"></p>
-    <i class="material-icons columnSwitch" (click)="showColumns()">
+    <div class="columns">
+      <!-- <label>Columns:</label> -->
+      <div class="columnSwitcher">
+      <mat-radio-group >
+        <mat-radio-button value="1" class="spaceTop" (click)="showColumns()">Show</mat-radio-button>
+        <mat-radio-button value="2" class="spaceTop" (click)="hideColumns()">Hide</mat-radio-button>
+      </mat-radio-group>
+      </div>
+    </div>
+    <!-- <i class="material-icons columnSwitch" (click)="showColumns()">
       view_column
-    </i>
+    </i> -->
   </div>
 
   <!-- <mat-sidenav-container > -->
