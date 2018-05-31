@@ -1,27 +1,22 @@
-/* .example-container {
-  position: absolute;
-  top: 200px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-} */
-
-/* .example-events {
-  width: 300px;
-  height: 200px;
-  overflow: auto;
-  border: 1px solid #555;
-} */
+* {
+  box-sizing: border-box;
+}
 
 th {
-  background: rgba(173, 173, 173, 0.562);
-  /* color: white; */
-  font-weight: 800;
+  background: silver;
+  color: black;
+  /* font-weight: 800; */
   font-size: 110%;
+  /* font-size:2vmin; */
 }
 
 td {
   font-size: 90%;
+  /* font-size:2vmin; */
+}
+
+i {
+  cursor: pointer;
 }
 
 .mat-header-cell.mat-sort-header-sorted {
@@ -31,6 +26,8 @@ td {
 .header {
   /* margin-top: 1%; */
   /* padding: 2px; */
+  display: table;
+  width: 100%;
   color: rgba(128, 128, 128, 0.726);
   text-align: center;
   height: 2%;
@@ -67,7 +64,7 @@ td {
   margin-left: 2%;
   /* margin-top: 2%; */
   display: flex;
-  width: 95%;
+  width: 94%;
   max-width: 100%;
   margin: auto;
 }
@@ -93,7 +90,7 @@ td {
 }
 
 .spaceTop {
-  margin-top: 5px;;
+  margin-top: 5px;
 }
 
 .spaceleft {
@@ -104,7 +101,6 @@ td {
   /* background: rgba(192, 189, 185, 0.397); */
   width: 85%;
 }
-
 
 .taskList {
   display: flex;
@@ -119,48 +115,55 @@ td {
   color: black;
 }
 
-/* table {
-  background: rgba(236, 220, 74, 0.397);
-} */
+.tableStyle {
+  width: 98%;
+}
 
 .taskListArea {
-  margin-left: 2%;
+  position: relative;
+  width: 95%;
+  /* margin-left: 5px;
+  margin-right: 5px;
+  overflow: auto; */
+  /* flex-grow:0; */
+  background: rgba(236, 220, 74, 0.397);
 }
 
-i {
-  cursor: pointer;
+.taskName {
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* background: rgba(236, 220, 74, 0.397); */
+  flex-grow:3;
 }
 
-.importanceLlevel {
-  margin-left: 2%;
-  top: 10px;
-}
-
-.priority {
-  /* background: rgba(36, 87, 180, 0.397); */
-  width: 70px;
-  min-width: 50px;
-  padding-right: 2%;
+.mat-column-priority {
+  /* background: rgba(128, 128, 128, 0.521); */
+  max-width: 100px;
+  min-width: 100px;
+  width: 100px;
+  padding-right: 30px;
 }
 .select {
   width: 80px;
 }
-.delete {
-  /* background: rgba(236, 220, 74, 0.397); */
-  width: 5px;
-  padding-right: 1%;
+
+.mat-column-date {
+  /* background: rgba(128, 128, 128, 0.767); */
+  max-width: 90px;
+  min-width: 90px;
+  width: 90px;
 }
 
-.date {
-  /* background: rgba(66, 144, 158, 0.397); */
-  width: 80px;
-  min-width: 80px;
-  /* padding-right: 1%; */
+.mat-column-delete {
+  /* background: rgba(128, 128, 128, 0.925); */
+  max-width: 35px;
+  min-width: 35px;
+  width: 35px;
+  margin-right: 5px;
 }
 
-.hour {
-  /* background: rgba(177, 135, 88, 0.397); */
-  width: 80px;
-  min-width: 80px;
-  right: 5px;
+.materialIconsDelete {
+  font-size: 250%;
+  /* left: 3%; */
 }

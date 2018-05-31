@@ -13,12 +13,12 @@ import { TooltipPosition } from "@angular/material";
 })
 export class ToDoListComponent implements OnInit {
   toDoListArray: any[];
-  displayedColumns = ["name"];
-  // displayedColumns = ["name", "priority","date", "delete"];
+  // displayedColumns = ["name"];
+  displayedColumns = ["name", "priority","date", "delete"];
   dataSource;
   taskId: number = 0;
   importanceLlevel: string = "Normal";
-  events: string[] = [];
+  // columns: boolean = false;
 
   constructor(private todoListService: ToDoListService) {}
 
@@ -42,10 +42,18 @@ export class ToDoListComponent implements OnInit {
 
   showColumns() {
     this.displayedColumns = ["name", "priority", "date", "delete"];
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+    this.getFireData();
+    // this.columns = true;
+    // return this.displayedColumns = ["name", "priority", "date", "delete"];
   }
 
   hideColumns() {
     this.displayedColumns = ["name"];
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+    // this.columns = false;
   }
 
   getFireData() {
@@ -62,14 +70,16 @@ export class ToDoListComponent implements OnInit {
   }
 
   addTask(task) {
-    this.taskId++;
-    this.todoListService.addTask(
-      task.value,
-      this.taskId,
-      this.importanceLlevel
-    );
-    task.value = null;
-    this.dataSource.paginator = this.paginator;
+    if (task.value.length > 0) {
+      this.taskId++;
+      this.todoListService.addTask(
+        task.value,
+        this.taskId,
+        this.importanceLlevel
+      );
+      task.value = null;
+      this.dataSource.paginator = this.paginator;
+    }
   }
 
   // setimportanceLlevel(option) {
