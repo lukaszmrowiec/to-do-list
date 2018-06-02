@@ -37,9 +37,9 @@
   </div>
 
   <!-- <mat-sidenav-container > -->
-  <table mat-table #table [dataSource]="dataSource" matSort class="tableStyle">
+  <table mat-table #table [dataSource]="dataSource" matSort>
 
-    <div class="taskListArea">
+    <!-- <div class="taskListArea"> -->
 
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef mat-sort-header class="taskName"> Name </th>
@@ -72,9 +72,9 @@
         </td>
       </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </div>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns" class="footer"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="footer"></tr>
+    <!-- </div> -->
   </table>
 
   <!-- </mat-sidenav-container> -->

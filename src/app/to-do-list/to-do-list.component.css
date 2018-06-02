@@ -5,17 +5,23 @@
 }
 
 th {
-  background: rgb(179, 178, 178);
+  background: rgb(197, 193, 193);
   color: black;
   /* font-weight: 800; */
   font-size: 110%;
-  /* font-size:2vmin; */
+  margin-left: 2%;
 }
 
 td {
   font-size: 90%;
   /* font-size:2vmin; */
-  /* background-color: rgba(192, 192, 192, 0.774); */
+  background-color: rgb(248, 245, 245);
+
+}
+
+mat-paginator {
+  background-color: rgb(253, 251, 251);
+  /* background-color: rgb(201, 28, 28); */
 }
 
 i {
@@ -27,14 +33,16 @@ i {
 }
 
 .header {
-  margin: auto;
+  /* margin: auto; */
   /* padding: 2px; */
   /* display: table; */
   width: 98%;
+  margin-left: 1%;
+  margin-right: 1%;
   /* color: rgba(128, 128, 128, 0.726); */
   text-align: center;
-  height: 150px;;
-  /* background-color: silver; */
+  height: 200px;;
+  background: rgb(197, 193, 193);
 }
 
 .header h4 {
@@ -43,7 +51,7 @@ i {
 }
 
 .taskInptArea {
-  /* background-color: silver; */
+  background-color: rgb(248, 245, 245);
   /* margin-left: 1%;
   margin-right:1%; */
   color: black;
@@ -55,7 +63,8 @@ i {
 .taskPlus {
   font-size: 200%;
   font-weight: 900;
-  margin-left: 2%;
+  /* margin-left: 2%; */
+  margin: auto;
   /* background: grey; */
 }
 
@@ -63,15 +72,15 @@ i {
   background: white;
   width: 70%;
   font-weight: 900;
-  /* background-color: silver; */
+  background-color: rgb(248, 245, 245);
 }
 
 .header2 {
-  /* background: rgba(94, 80, 64, 0.699); */
-  margin-left: 2%;
+  background-color: rgb(253, 251, 251);
+  /* margin-left: 2%; */
   /* margin-top: 2%; */
   display: flex;
-  width: 98%;
+  width: 100%;
   max-width: 100%;
   height: 100px;
   max-height: 100px;
@@ -109,22 +118,25 @@ i {
   width: 85%;
 }
 
+table {
+  width: 100%;
+}
+
 .taskList {
   /* display: flex; */
   margin-top: 2%;
-  margin-left: 2;
-  flex-direction: column;
-  min-width: 300px;
+  margin-left: 1%;
+  margin-right: 1%;
+  /* flex-direction: column; */
+  width: 98%;
+  min-width: 98%;
+  max-width: 98%;
   overflow: auto;
   max-height: 700px;
 }
 
 .mat-header-cell.mat-sort-header-sorted {
   color: black;
-}
-
-.tableStyle {
-  width: 98%;
 }
 
 .taskListArea {
