@@ -53,11 +53,6 @@ input.mat-input-element {
   /* font-size: 1em; */
 }
 
-:host /deep/ .mat-input-placeholder {
-  font-size: 20em;
-  color: red;
-}
-
 /* .mat-form-field {
   font-size: 1em;
   font-weight: 400;
@@ -77,6 +72,31 @@ input.mat-input-element {
   display: block;
   padding-top: 2%;
   font-size: 90%;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgb(163, 163, 163);
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 105%;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 
 .spaceTop {
@@ -159,6 +179,7 @@ i {
 }
 .select {
   width: 80px;
+  /* background: rgba(28, 57, 185, 0.521); */
 }
 
 .mat-column-date {

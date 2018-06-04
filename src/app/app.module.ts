@@ -1,5 +1,5 @@
 import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import { Directive,NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatTableModule } from "@angular/material";
@@ -43,14 +43,13 @@ import { environment } from "../environments/environment";
     MatRadioModule
 
   ],
+
   // exports: [
-  //   BrowserAnimationsModule,
-  //   MatTableModule,
-  //   MatSortModule,
-  //   MatFormFieldModule,
-  //   MatPaginatorModule
+  //   MatTooltipModule
   // ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {}
+
