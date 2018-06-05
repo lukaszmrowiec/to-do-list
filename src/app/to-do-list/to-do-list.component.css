@@ -17,12 +17,6 @@ mat-card {
   width: 50%;
   padding-top: 5px;
 }
-/* matInput */
-input.mat-input-element {
-  margin-top: -.0125em;
-  /* background: rgb(168, 26, 168); */
-  /* font-size: 100%; */
-}
 
 .taskPlus {
   font-size: 170%;
@@ -46,8 +40,6 @@ input.mat-input-element {
 } */
 
 .searchField {
-  /* background: rgba(192, 189, 185, 0.397); */
-  /* padding-top: 1%; */
   margin-left: 1%;
   width: 20%;
   /* font-size: 1em; */
@@ -57,11 +49,6 @@ input.mat-input-element {
   font-size: 1em;
   font-weight: 400;
   line-height: 1;
-} */
-
-/* #mat-input-1 {
-  font-size: 150%;
-  color: red
 } */
 
 .columns {
@@ -118,15 +105,15 @@ table {
 
 th {
   background: rgb(197, 193, 193);
-  font-weight: 600;
-  font-size: 110%;
+  font-weight: 400;
+  font-size: 100%;
   color: black;
 }
 
 td {
   font-size: 90%;
   /* font-size:2vmin; */
-  background-color: rgb(248, 245, 245);
+  /* background-color: rgb(248, 245, 245); */
 }
 
 mat-paginator {
@@ -168,14 +155,15 @@ i {
 
 .mat-column-name {
   width: 60%;
+  padding-right: 10px;
 }
 
 .mat-column-priority {
   /* background: rgba(128, 128, 128, 0.521); */
-  max-width: 100px;
-  min-width: 100px;
-  width: 100px;
-  padding-right: 30px;
+  max-width: 80px;
+  min-width: 70px;
+  width: 80px;
+  padding-right: 10px;
 }
 .select {
   width: 80px;
@@ -184,25 +172,25 @@ i {
 
 .mat-column-date {
   /* background: rgba(128, 128, 128, 0.767); */
-  max-width: 90px;
-  min-width: 90px;
-  width: 90px;
+  max-width: 60px;
+  min-width: 80px;
+  width: 60px;
 }
 
 .mat-column-delete {
-  /* background: rgba(128, 128, 128, 0.925); */
-  max-width: 35px;
-  min-width: 35px;
-  width: 35px;
-  margin-right: 5px;
+  max-width: 40px;
+  min-width: 30px;
+  width: 30px;
+  margin-right: 2px;
 }
 
 .materialIconsDelete {
-  font-size: 230%;
-  /* left: 3%; */
+  position: relative;
+  font-size: 210%;
+  margin: auto;
 }
 
-.mat-cell:nth-child(1),
+/* .mat-cell:nth-child(1),
 .mat-header-cell:nth-child(1) {
   flex: 0 0 5%;
-}
+} */
