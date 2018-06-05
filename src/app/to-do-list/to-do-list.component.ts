@@ -112,7 +112,7 @@ export class ToDoListComponent implements OnInit {
     this.columPriorityTitleValue1 = "Normalny`";
     this.columPriorityTitleValue2 = "Wysoki";
     this.columDateTitle = "Data";
-    this.paginatorItemsPerPage = this.matPaginatorIntlCro.labelPl();
+    // this.paginatorItemsPerPage = this.matPaginatorIntlCro.labelPl();
     this.dataSource.paginator = this.paginator;
   }
 
@@ -129,7 +129,8 @@ export class ToDoListComponent implements OnInit {
     this.columPriorityTitleValue1 = "Normal";
     this.columPriorityTitleValue2 = "High";
     this.columDateTitle = "Date";
-    this.paginatorItemsPerPage = "Items par page:";
+    // this.paginatorItemsPerPage = "Items par page:";
+    this.dataSource.paginator = this.paginator;
   }
 
   priorityUdate($key: string, option: string) {

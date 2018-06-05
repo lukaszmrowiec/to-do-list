@@ -44,14 +44,23 @@ mat-card {
   flex: 0 0 5%;
 } */
 
+/* .search {
+  display: inline-flex;
+  width: 300%;
+  margin-left: 2%;
+  padding-right: 50%;
+  background: rgba(59, 167, 91, 0.397);
+} */
+
 .searchField {
-  margin-left: 1%;
   width: 20%;
+  margin-left: 2%;
 }
 
 .header2Space {
-  background: rgba(59, 167, 91, 0.397);
-  width: 50%;
+  /* background: rgba(59, 167, 91, 0.397); */
+  display: inline-flex;
+  width: 85%;
 }
 
 .header2Space {
@@ -60,8 +69,12 @@ mat-card {
 
 .langVer {
   margin: auto;
-  width: 60px;
-  padding-right: 13%;
+  min-width: 30px;
+  max-width: 30px;;
+  width: 30px;
+  padding-right: 100px;
+  /* margin-left: 0%; */
+  /* background: lightskyblue; */
 }
 
 .langVerSwitcher {
@@ -71,15 +84,24 @@ mat-card {
   /* background: lightskyblue; */
 }
 
+.verFlag {
+  padding-top: 2px;
+  /* margin: auto; */
+  width:25px;
+  height:15px;
+  border: 1px solid black;
+}
+
 .viewColumns {
   display: inline-block;
   margin: auto;
-  padding-left: 2%;
+  padding-right: 2%;
+  /* background: rgb(134, 173, 168); */
 }
 
 .viewColumnSwitcher {
   display: block;
-  width: 100px;
+  width: 70px;
   float: right;
   font-size: 90%;
   /* background: rgb(67, 170, 113); */
@@ -138,7 +160,7 @@ th {
 td {
   font-size: 90%;
   /* font-size:2vmin; */
-  /* background-color: rgb(248, 245, 245); */
+  background-color: rgb(248, 245, 245);
 }
 
 mat-paginator {
@@ -178,41 +200,57 @@ i {
   max-width: 50ch;
 } */
 
+.helper {
+  width: auto;
+}
+
 .mat-column-name {
-  width: 60%;
+  width: 85%;
   padding-right: 10px;
+  /* background: rgba(158, 153, 85, 0.521); */
 }
 
 .mat-column-priority {
   /* background: rgba(128, 128, 128, 0.521); */
-  max-width: 80px;
+  max-width: 70px;
   min-width: 70px;
-  width: 80px;
-  padding-right: 10px;
+  width: 70px;
+  padding-right: 15px;
 }
 .select {
-  width: 80px;
+  max-width: 60px;
+  min-width: 60px;
+  width: 60px;
+  font-size: 80%;
   /* background: rgba(28, 57, 185, 0.521); */
 }
 
 .mat-column-date {
   /* background: rgba(128, 128, 128, 0.767); */
-  max-width: 60px;
+  max-width: 70px;
   min-width: 80px;
-  width: 60px;
+  width: 80px;
+  padding-left: 5px;
+}
+
+.tableCell{
+  font-size: 80%;
+  /* background: rgb(166, 130, 199); */
+  padding-left: 5px;
 }
 
 .mat-column-delete {
-  max-width: 40px;
+  max-width: 30px;
   min-width: 30px;
   width: 30px;
-  margin-right: 2px;
+  padding-left: 5px;
 }
 
 .materialIconsDelete {
   position: relative;
   font-size: 210%;
   margin: auto;
+  right: 7px;
 }
 
 /* .mat-cell:nth-child(1),
