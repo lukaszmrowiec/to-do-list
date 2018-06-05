@@ -19,8 +19,15 @@ mat-card {
 }
 
 .inputField {
-  width: 50%;
+  width: 40%;
   padding-top: 5px;
+  font-size: 100%;
+}
+
+.deleteIconn {
+  background-color: rgb(248, 245, 245);
+  width: 3px;
+  cursor: pointer;
 }
 
 .taskPlus {
@@ -53,18 +60,14 @@ mat-card {
 } */
 
 .searchField {
-  width: 20%;
+  width: 50%;
   margin-left: 2%;
+  font-size: 100%;
+  /* background: rgba(55, 175, 91, 0.397); */
 }
 
 .header2Space {
-  /* background: rgba(59, 167, 91, 0.397); */
-  display: inline-flex;
-  width: 85%;
-}
-
-.header2Space {
-  margin: auto;
+  width: 30%;
 }
 
 .langVer {

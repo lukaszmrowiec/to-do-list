@@ -4,7 +4,10 @@
 <mat-card>
   <mat-card-content>
     <mat-form-field class="inputField">
-      <input matInput placeholder= "{{taskPlaceholder}}" #task (keyup.enter)="addTask(task)">
+      <input matInput placeholder="{{taskPlaceholder}}" #task (keyup.enter)="addTask(task)" [(ngModel)]="value">
+      <!-- <button *ngIf="value" matSuffix aria-label="Clear" (click)="value=''"> -->
+        <mat-icon *ngIf="value" matSuffix aria-label="Clear" (click)="value=''" class="deleteIconn">close</mat-icon>
+        <!-- </button> -->
     </mat-form-field>
     <i class="material-icons taskPlus" (click)="addTask(task)"> add</i>
   </mat-card-content>

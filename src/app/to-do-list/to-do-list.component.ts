@@ -32,6 +32,7 @@ export class ToDoListComponent implements OnInit {
   columPriorityTitleValue2: string = "High";
   columDateTitle: string = "Date";
   paginatorItemsPerPage: string;
+  value = ' ';
 
   constructor(
     private todoListService: ToDoListService,
