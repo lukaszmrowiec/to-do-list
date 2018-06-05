@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+h2 {
+  text-align: center;
+}
+
+
 mat-card {
   width: 98%;
   margin-left: 1%;
@@ -42,23 +47,47 @@ mat-card {
 .searchField {
   margin-left: 1%;
   width: 20%;
-  /* font-size: 1em; */
 }
 
-/* .mat-form-field {
-  font-size: 1em;
-  font-weight: 400;
-  line-height: 1;
-} */
+.header2Space {
+  background: rgba(59, 167, 91, 0.397);
+  width: 50%;
+}
 
-.columns {
+.header2Space {
   margin: auto;
 }
 
-.columnSwitcher {
-  display: block;
-  padding-top: 2%;
+.langVer {
+  margin: auto;
+  width: 60px;
+  padding-right: 13%;
+}
+
+.langVerSwitcher {
+  /* display: block; */
+  /* width: 100px; */
   font-size: 90%;
+  /* background: lightskyblue; */
+}
+
+.viewColumns {
+  display: inline-block;
+  margin: auto;
+  padding-left: 2%;
+}
+
+.viewColumnSwitcher {
+  display: block;
+  width: 100px;
+  float: right;
+  font-size: 90%;
+  /* background: rgb(67, 170, 113); */
+}
+
+.butonSwitcher {
+  position: relative;
+  display: inline-block;
 }
 
 .tooltip {
@@ -68,7 +97,7 @@ mat-card {
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 120px;
+  width: 100px;
   background-color: rgb(163, 163, 163);
   color: #fff;
   text-align: center;
@@ -78,8 +107,9 @@ mat-card {
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
-  top: -5px;
-  right: 105%;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
 }
 
 .tooltip:hover .tooltiptext {
@@ -92,11 +122,6 @@ mat-card {
 
 .spaceleft {
   margin-left: 5px;
-}
-
-.header2Space {
-  /* background: rgba(192, 189, 185, 0.397); */
-  width: 85%;
 }
 
 table {

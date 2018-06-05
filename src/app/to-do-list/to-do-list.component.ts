@@ -3,24 +3,40 @@ import { MatPaginator, MatTableDataSource, MatSort } from "@angular/material";
 import { MatSortModule } from "@angular/material/sort";
 import { ToDoListService } from "./to-do-list.service";
 import { FormControl } from "@angular/forms";
-import { TooltipPosition } from "@angular/material";
+import { MatPaginatorIntlCro } from "../matPaginatorIntlCroClass";
 
 @Component({
   selector: "app-to-do-list",
   templateUrl: "./to-do-list.component.html",
   styleUrls: ["./to-do-list.component.css"],
-  providers: [ToDoListService]
+  providers: [ToDoListService, MatPaginatorIntlCro]
 })
 export class ToDoListComponent implements OnInit {
   toDoListArray: any[];
   // displayedColumns = ["name"];
-  displayedColumns = ["name", "priority","date", "delete"];
+  displayedColumns = ["name", "priority", "date", "delete"];
   dataSource;
   taskId: number = 0;
   importanceLlevel: string = "Normal";
-  // columns: boolean = false;
+  appTitle: string = "To Do List";
+  taskPlaceholder: string = "Enter task...";
+  searchPlaceholder: string = "Search";
+  show: string = "Show";
+  columShow: string = "Show columns";
+  hide: string = "Hide";
+  columHide: string = "Hide columns";
+  columNameTitle: string = "Task name";
+  columPriorityTitle: string = "Priority";
+  columPriorityTitleValue: string = "Normal";
+  columPriorityTitleValue1: string = "Normal";
+  columPriorityTitleValue2: string = "High";
+  columDateTitle: string = "Date";
+  paginatorItemsPerPage: string;
 
-  constructor(private todoListService: ToDoListService) {}
+  constructor(
+    private todoListService: ToDoListService,
+    private matPaginatorIntlCro: MatPaginatorIntlCro
+  ) {}
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -71,6 +87,7 @@ export class ToDoListComponent implements OnInit {
 
   addTask(task) {
     if (task.value.length > 0) {
+      console.log(task.value);
       this.taskId++;
       this.todoListService.addTask(
         task.value,
@@ -82,9 +99,38 @@ export class ToDoListComponent implements OnInit {
     }
   }
 
-  // setimportanceLlevel(option) {
-  //   this.importanceLlevel = option;
-  // }
+  changeLangVerToPl() {
+    this.appTitle = "Lista zadań";
+    this.taskPlaceholder = "Wpisz zadanie...";
+    this.searchPlaceholder = "Szukaj...";
+    this.show = "Pokaż";
+    this.columShow = "Pokaż kolumny";
+    this.hide = "Ukryj";
+    this.columHide = "Ukryj kolumny";
+    this.columNameTitle = "Nazwa zadania";
+    this.columPriorityTitle = "Priorytet";
+    this.columPriorityTitleValue1 = "Normalny`";
+    this.columPriorityTitleValue2 = "Wysoki";
+    this.columDateTitle = "Data";
+    this.paginatorItemsPerPage = this.matPaginatorIntlCro.labelPl();
+    this.dataSource.paginator = this.paginator;
+  }
+
+  changeLangVerToEn() {
+    this.appTitle = "To Do List";
+    this.taskPlaceholder = "Enter task...";
+    this.searchPlaceholder = "Search...";
+    this.show = "Show";
+    this.columShow = "Show columns";
+    this.hide = "Hide";
+    this.columHide = "Hide columns";
+    this.columNameTitle = "Task name";
+    this.columPriorityTitle = "Priority";
+    this.columPriorityTitleValue1 = "Normal";
+    this.columPriorityTitleValue2 = "High";
+    this.columDateTitle = "Date";
+    this.paginatorItemsPerPage = "Items par page:";
+  }
 
   priorityUdate($key: string, option: string) {
     console.log(option);

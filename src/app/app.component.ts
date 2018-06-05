@@ -1,4 +1,4 @@
-import { Directive, Component } from '@angular/core';
+import { Component } from '@angular/core';
 
 
 @Component({
@@ -10,11 +10,3 @@ import { Directive, Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
 }
-
-@Directive({
-  selector: '[tooltip]',
-  exportAs: 'tooltip'
- })
-
- export class tooltip {
- }

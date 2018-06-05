@@ -6,7 +6,7 @@ import { MatTableModule } from "@angular/material";
 import { MatSortModule } from "@angular/material/sort";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material";
-import { MatPaginatorModule } from "@angular/material/paginator";
+// import { MatPaginatorModule } from "@angular/material/paginator";
 import { FormsModule } from "@angular/forms";
 import { MatCardModule } from "@angular/material/card";
 import {MatSelectModule} from '@angular/material/select';
@@ -14,6 +14,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
+import { MatPaginatorModule, MatPaginatorIntl} from '@angular/material';
+import { MatPaginatorIntlCro } from './matPaginatorIntlCroClass'
 
 import { AppComponent } from "./app.component";
 import { ToDoListComponent } from "./to-do-list/to-do-list.component";
@@ -47,7 +49,7 @@ import { environment } from "../environments/environment";
   // exports: [
   //   MatTooltipModule
   // ],
-  providers: [],
+  providers: [{ provide: MatPaginatorIntl, useClass: MatPaginatorIntlCro}],
   bootstrap: [AppComponent]
 })
 
