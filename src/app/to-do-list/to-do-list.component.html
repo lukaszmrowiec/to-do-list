@@ -5,9 +5,7 @@
   <mat-card-content>
     <mat-form-field class="inputField">
       <input matInput placeholder="{{taskPlaceholder}}" #task (keyup.enter)="addTask(task)" [(ngModel)]="value">
-      <!-- <button *ngIf="value" matSuffix aria-label="Clear" (click)="value=''"> -->
         <mat-icon *ngIf="value" matSuffix aria-label="Clear" (click)="value=''" class="deleteIconn">close</mat-icon>
-        <!-- </button> -->
     </mat-form-field>
     <i class="material-icons taskPlus" (click)="addTask(task)"> add</i>
   </mat-card-content>
@@ -17,7 +15,7 @@
 <div class="mat-elevation-z8 taskList">
   <div class="header2">
     <mat-form-field class="searchField">
-      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="{{searchPlaceholder}}" class="searchField">
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="{{searchPlaceholder}}">
     </mat-form-field>
     <div class="header2Space"></div>
     <div class="langVer">
@@ -57,7 +55,7 @@
       <td mat-cell *matCellDef="let element">
         <form>
           <mat-form-field class="select">
-            <mat-select placeholder={{element.priority}} class="select">
+            <mat-select placeholder= "{{element.priority}}" class="select">
               <mat-option value="{{columPriorityTitleValue1}}" #opt1 (click)="priorityUdate(element.$key, opt1.value)">{{columPriorityTitleValue1}}</mat-option>
               <mat-option value="{{columPriorityTitleValue2}}" #opt2 (click)="priorityUdate(element.$key, opt2.value)">{{columPriorityTitleValue2}}</mat-option>
             </mat-select>

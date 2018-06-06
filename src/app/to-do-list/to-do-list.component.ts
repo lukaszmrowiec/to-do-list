@@ -18,9 +18,11 @@ export class ToDoListComponent implements OnInit {
   dataSource;
   taskId: number = 0;
   importanceLlevel: string = "Normal";
+  value = "";
+
   appTitle: string = "To Do List";
   taskPlaceholder: string = "Enter task...";
-  searchPlaceholder: string = "Search";
+  searchPlaceholder: string = "Search...";
   show: string = "Show";
   columShow: string = "Show columns";
   hide: string = "Hide";
@@ -32,7 +34,8 @@ export class ToDoListComponent implements OnInit {
   columPriorityTitleValue2: string = "High";
   columDateTitle: string = "Date";
   paginatorItemsPerPage: string;
-  value = ' ';
+  langVer: string = "eng";
+  taskPriority: string;
 
   constructor(
     private todoListService: ToDoListService,
@@ -110,11 +113,12 @@ export class ToDoListComponent implements OnInit {
     this.columHide = "Ukryj kolumny";
     this.columNameTitle = "Nazwa zadania";
     this.columPriorityTitle = "Priorytet";
-    this.columPriorityTitleValue1 = "Normalny`";
+    this.columPriorityTitleValue1 = "Normalny";
     this.columPriorityTitleValue2 = "Wysoki";
     this.columDateTitle = "Data";
     // this.paginatorItemsPerPage = this.matPaginatorIntlCro.labelPl();
-    this.dataSource.paginator = this.paginator;
+    this.langVer = "pl";
+    this.replaceImportanceLlevelLang();
   }
 
   changeLangVerToEn() {
@@ -131,7 +135,8 @@ export class ToDoListComponent implements OnInit {
     this.columPriorityTitleValue2 = "High";
     this.columDateTitle = "Date";
     // this.paginatorItemsPerPage = "Items par page:";
-    this.dataSource.paginator = this.paginator;
+    this.langVer = "eng";
+    this.replaceImportanceLlevelLang();
   }
 
   priorityUdate($key: string, option: string) {
@@ -141,5 +146,24 @@ export class ToDoListComponent implements OnInit {
 
   deletingTask($key: string) {
     this.todoListService.removeTask($key);
+  }
+
+  replaceImportanceLlevelLang() {
+    this.toDoListArray.forEach((item, index) => {
+
+      if (this.langVer === "pl" && this.toDoListArray[index].priority === "Normalny") {
+      } else if (this.langVer === "pl" && this.toDoListArray[index].priority === "Wysoki") {
+      } else if (this.langVer === "pl" && this.toDoListArray[index].priority === "Normal") {
+        this.toDoListArray[index].priority = "Normalny";
+      } else if (this.langVer === "pl" && this.toDoListArray[index].priority === "High") {
+        this.toDoListArray[index].priority = "Wysoki";
+      } else if (this.langVer === "eng" && this.toDoListArray[index].priority === "Normalny") {
+        this.toDoListArray[index].priority = "Normal";
+      } else if (this.langVer === "eng" && this.toDoListArray[index].priority === "Wysoki") {
+        this.toDoListArray[index].priority = "High";
+      } else if (this.langVer === "eng" && this.toDoListArray[index].priority === "Normal") {
+      } else if (this.langVer === "eng" && this.toDoListArray[index].priority === "High") {;
+      }
+    });
   }
 }

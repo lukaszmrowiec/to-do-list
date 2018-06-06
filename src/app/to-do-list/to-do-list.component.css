@@ -30,6 +30,12 @@ mat-card {
   cursor: pointer;
 }
 
+.deleteIconn2 {
+  background-color: white;
+  width: 3px;
+  cursor: pointer;
+}
+
 .taskPlus {
   font-size: 170%;
   font-weight: 900;
@@ -62,20 +68,20 @@ mat-card {
 .searchField {
   width: 50%;
   margin-left: 2%;
-  font-size: 100%;
+  font-size: 90%;
   /* background: rgba(55, 175, 91, 0.397); */
 }
 
 .header2Space {
-  width: 30%;
+  width: 38%;
 }
 
 .langVer {
   margin: auto;
-  min-width: 30px;
-  max-width: 30px;;
-  width: 30px;
-  padding-right: 100px;
+  min-width: 27px;
+  max-width: 27px;;
+  width: 27px;
+  padding-right: 85px;
   /* margin-left: 0%; */
   /* background: lightskyblue; */
 }
@@ -96,7 +102,7 @@ mat-card {
 }
 
 .viewColumns {
-  display: inline-block;
+  /* display: inline-block; */
   margin: auto;
   padding-right: 2%;
   /* background: rgb(134, 173, 168); */
@@ -104,6 +110,8 @@ mat-card {
 
 .viewColumnSwitcher {
   display: block;
+  max-width: 70px;
+  min-width: 70px;
   width: 70px;
   float: right;
   font-size: 90%;
@@ -215,15 +223,15 @@ i {
 
 .mat-column-priority {
   /* background: rgba(128, 128, 128, 0.521); */
+  max-width: 88px;
+  min-width: 85px;
+  width: 85px;
+  padding-right: 20px;
+}
+.select {
   max-width: 70px;
   min-width: 70px;
   width: 70px;
-  padding-right: 15px;
-}
-.select {
-  max-width: 60px;
-  min-width: 60px;
-  width: 60px;
   font-size: 80%;
   /* background: rgba(28, 57, 185, 0.521); */
 }
