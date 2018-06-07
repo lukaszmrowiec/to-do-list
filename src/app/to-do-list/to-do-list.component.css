@@ -1,166 +1,270 @@
-/* .example-container {
-  position: absolute;
-  top: 200px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-} */
-
-/* .example-events {
-  width: 300px;
-  height: 200px;
-  overflow: auto;
-  border: 1px solid #555;
-} */
-
-th {
-  background: rgba(173, 173, 173, 0.562);
-  /* color: white; */
-  font-weight: 800;
-  font-size: 110%;
+* {
+  box-sizing: border-box;
 }
 
-td {
-  font-size: 90%;
-}
-
-.mat-header-cell.mat-sort-header-sorted {
-  color: black;
-}
-
-.header {
-  /* margin-top: 1%; */
-  /* padding: 2px; */
-  color: rgba(128, 128, 128, 0.726);
+h2 {
   text-align: center;
-  height: 2%;
-  /* background: rgba(211, 211, 125, 0.678); */
 }
 
-.header h3 {
+
+mat-card {
+  width: 98%;
+  margin-left: 1%;
+  margin-top: 1%;
+  margin-right: 1%;
+  margin-bottom: 0px;
   padding: 0;
-  margin: 0px;
-}
-
-.taskInptArea {
-  /* background: rgba(211, 211, 125, 0.678); */
-  /* margin-left: 1%;
-  margin-right:1%; */
-  color: black;
-  width: 100%;
-  font-size: 120%;
-}
-
-.taskPlus {
-  font-size: 200%;
-  margin-left: 2%;
+  text-align: center;
+  background-color: rgb(248, 245, 245);
 }
 
 .inputField {
-  background: white;
-  width: 70%;
+  width: 40%;
+  padding-top: 5px;
+  font-size: 100%;
+}
+
+.deleteIconn {
+  background-color: rgb(248, 245, 245);
+  width: 3px;
+  cursor: pointer;
+}
+
+.deleteIconn2 {
+  background-color: white;
+  width: 3px;
+  cursor: pointer;
+}
+
+.taskPlus {
+  font-size: 170%;
   font-weight: 900;
+  margin-left: 5%;
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
 }
 
 .header2 {
-  /* background: rgba(94, 80, 64, 0.699); */
-  margin-left: 2%;
-  /* margin-top: 2%; */
+  background-color: rgb(253, 251, 251);
   display: flex;
-  width: 95%;
+  width: 100%;
   max-width: 100%;
   margin: auto;
 }
 
+/* .mat-cell[_ngcontent-c1]:nth-child(1), .mat-header-cell[_ngcontent-c1]:nth-child(1) {
+  flex: 0 0 5%;
+} */
+
+/* .search {
+  display: inline-flex;
+  width: 300%;
+  margin-left: 2%;
+  padding-right: 50%;
+  background: rgba(59, 167, 91, 0.397);
+} */
+
 .searchField {
-  /* background: rgba(192, 189, 185, 0.397); */
-  /* display: inline-flex; */
-  width: 20%;
-}
-
-.columns {
-  /* width: 7%; */
-  margin: auto;
-  /* background: green; */
-  /* margin-right: 1%; */
-}
-
-.columnSwitcher {
-  display: block;
-  padding-top: 2%;
+  width: 50%;
+  margin-left: 2%;
   font-size: 90%;
-  /* background: yellow; */
+  /* background: rgba(55, 175, 91, 0.397); */
+}
+
+.header2Space {
+  width: 38%;
+}
+
+.langVer {
+  margin: auto;
+  min-width: 27px;
+  max-width: 27px;;
+  width: 27px;
+  padding-right: 85px;
+  /* margin-left: 0%; */
+  /* background: lightskyblue; */
+}
+
+.langVerSwitcher {
+  /* display: block; */
+  /* width: 100px; */
+  font-size: 90%;
+  /* background: lightskyblue; */
+}
+
+.verFlag {
+  padding-top: 2px;
+  /* margin: auto; */
+  width:25px;
+  height:15px;
+  border: 1px solid black;
+}
+
+.viewColumns {
+  /* display: inline-block; */
+  margin: auto;
+  padding-right: 2%;
+  /* background: rgb(134, 173, 168); */
+}
+
+.viewColumnSwitcher {
+  display: block;
+  max-width: 70px;
+  min-width: 70px;
+  width: 70px;
+  float: right;
+  font-size: 90%;
+  /* background: rgb(67, 170, 113); */
+}
+
+.butonSwitcher {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 100px;
+  background-color: rgb(163, 163, 163);
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 
 .spaceTop {
-  margin-top: 5px;;
+  margin-top: 5px;
 }
 
 .spaceleft {
   margin-left: 5px;
 }
 
-.header2Space {
-  /* background: rgba(192, 189, 185, 0.397); */
-  width: 85%;
+table {
+  width: 100%;
 }
 
-
-.taskList {
-  display: flex;
-  margin-top: 2%;
-  flex-direction: column;
-  min-width: 300px;
-  overflow: auto;
-  max-height: 700px;
-}
-
-.mat-header-cell.mat-sort-header-sorted {
+th {
+  background: rgb(197, 193, 193);
+  font-weight: 400;
+  font-size: 100%;
   color: black;
 }
 
-/* table {
-  background: rgba(236, 220, 74, 0.397);
-} */
+td {
+  font-size: 90%;
+  /* font-size:2vmin; */
+  background-color: rgb(248, 245, 245);
+}
 
-.taskListArea {
-  margin-left: 2%;
+mat-paginator {
+  background-color: rgb(253, 251, 251);
+  /* background-color: rgb(201, 28, 28); */
 }
 
 i {
   cursor: pointer;
 }
 
-.importanceLlevel {
-  margin-left: 2%;
-  top: 10px;
+.taskList {
+  display: table;
+  margin-top: 1%;
+  margin-left: 1%;
+  margin-right: 1%;
+  /* flex-direction: column; */
+  width: 98%;
+  min-width: 98%;
+  max-width: 98%;
+  /* min-height: 600px;
+  max-height: 650px; */
+  /* height: 1650px; */
 }
 
-.priority {
-  /* background: rgba(36, 87, 180, 0.397); */
-  width: 70px;
-  min-width: 50px;
-  padding-right: 2%;
+.mat-header-cell.mat-sort-header-sorted {
+  color: black;
+}
+
+/* .taskName {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: rgba(236, 220, 74, 0.397);
+  flex-grow: 1;
+  color: red;
+  max-width: 50ch;
+} */
+
+.helper {
+  width: auto;
+}
+
+.mat-column-name {
+  width: 85%;
+  padding-right: 10px;
+  /* background: rgba(158, 153, 85, 0.521); */
+}
+
+.mat-column-priority {
+  /* background: rgba(128, 128, 128, 0.521); */
+  max-width: 88px;
+  min-width: 85px;
+  width: 85px;
+  padding-right: 20px;
 }
 .select {
-  width: 80px;
-}
-.delete {
-  /* background: rgba(236, 220, 74, 0.397); */
-  width: 5px;
-  padding-right: 1%;
-}
-
-.date {
-  /* background: rgba(66, 144, 158, 0.397); */
-  width: 80px;
-  min-width: 80px;
-  /* padding-right: 1%; */
+  max-width: 70px;
+  min-width: 70px;
+  width: 70px;
+  font-size: 80%;
+  /* background: rgba(28, 57, 185, 0.521); */
 }
 
-.hour {
-  /* background: rgba(177, 135, 88, 0.397); */
-  width: 80px;
+.mat-column-date {
+  /* background: rgba(128, 128, 128, 0.767); */
+  max-width: 70px;
   min-width: 80px;
-  right: 5px;
+  width: 80px;
+  padding-left: 5px;
 }
+
+.tableCell{
+  font-size: 80%;
+  /* background: rgb(166, 130, 199); */
+  padding-left: 5px;
+}
+
+.mat-column-delete {
+  max-width: 30px;
+  min-width: 30px;
+  width: 30px;
+  padding-left: 5px;
+}
+
+.materialIconsDelete {
+  position: relative;
+  font-size: 210%;
+  margin: auto;
+  right: 7px;
+}
+
+/* .mat-cell:nth-child(1),
+.mat-header-cell:nth-child(1) {
+  flex: 0 0 5%;
+} */

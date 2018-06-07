@@ -24,8 +24,8 @@ export class ToDoListService {
   addTask(title: string, taskId: number, importanceLlevel) {
     this.today = Date.now();
     this.toDoList.push({
+      title: title,
       id: taskId,
-      name: title,
       date: this.today,
       priority: importanceLlevel
     });
