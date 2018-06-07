@@ -1,86 +1,89 @@
-<!-- <h2>To Do List -v 8.5 fonts corrections</h2> -->
-<h2>{{ appTitle }}</h2>
+<div class="container">
+  <div class="mat-elevation-z13 taskList">
+      <h2>{{ appTitle }}</h2>
+      <mat-card>
+          <mat-card-content>
+            <mat-form-field class="inputField">
+              <input matInput placeholder="{{taskPlaceholder}}" #task (keyup.enter)="addTask(task)" [(ngModel)]="value">
+              <mat-icon *ngIf="value" matSuffix aria-label="Clear" (click)="value=''" class="deleteIconn">close</mat-icon>
+            </mat-form-field>
+            <i class="material-icons taskPlus" (click)="addTask(task)"> add</i>
+          </mat-card-content>
+        </mat-card>
 
-<mat-card>
-  <mat-card-content>
-    <mat-form-field class="inputField">
-      <input matInput placeholder="{{taskPlaceholder}}" #task (keyup.enter)="addTask(task)" [(ngModel)]="value">
-        <mat-icon *ngIf="value" matSuffix aria-label="Clear" (click)="value=''" class="deleteIconn">close</mat-icon>
-    </mat-form-field>
-    <i class="material-icons taskPlus" (click)="addTask(task)"> add</i>
-  </mat-card-content>
-</mat-card>
-
-
-<div class="mat-elevation-z8 taskList">
-  <div class="header2">
-    <mat-form-field class="searchField">
-      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="{{searchPlaceholder}}">
-    </mat-form-field>
-    <div class="header2Space"></div>
-    <div class="langVer">
-      <div class="langVerSwitcher">
-        <mat-radio-group>
-          <mat-radio-button value="1" class="butonSwitcher" (click)="changeLangVerToPl()"><img src="../../assets//images/plFlag.png" alt="Polish version" class="verFlag"></mat-radio-button>
-          <mat-radio-button value="2" class="spaceTop butonSwitcher" (click)="changeLangVerToEn()"><img src="../../assets//images/engFlag.png" alt="English version" class="verFlag"></mat-radio-button>
-        </mat-radio-group>
+    <div class="header2">
+      <mat-form-field class="searchField">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="{{searchPlaceholder}}">
+      </mat-form-field>
+      <div class="header2Space"></div>
+      <div class="langVer">
+        <div class="langVerSwitcher">
+          <mat-radio-group>
+            <mat-radio-button value="1" class="butonSwitcher" (click)="changeLangVerToPl()">
+              <img src="../../assets//images/plFlag.png" alt="Polish version" class="verFlag">
+            </mat-radio-button>
+            <mat-radio-button value="2" class="spaceTop butonSwitcher" (click)="changeLangVerToEn()">
+              <img src="../../assets//images/engFlag.png" alt="English version" class="verFlag">
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
       </div>
+
+      <div class="viewColumns">
+        <div class="viewColumnSwitcher">
+          <mat-radio-group>
+            <mat-radio-button value="1" (click)="showColumns()">{{show}}
+              <!-- <span class="tooltiptext">{{columShow}}</span> -->
+            </mat-radio-button>
+            <mat-radio-button value="2" class="spaceTop" (click)="hideColumns()">{{hide}}
+              <!-- <span class="tooltiptext">{{columHide}}</span> -->
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+
     </div>
 
-    <div class="viewColumns">
-      <div class="viewColumnSwitcher">
-        <mat-radio-group>
-          <mat-radio-button value="1" (click)="showColumns()">{{show}}
-            <!-- <span class="tooltiptext">{{columShow}}</span> -->
-          </mat-radio-button>
-          <mat-radio-button value="2" class="spaceTop" (click)="hideColumns()">{{hide}}
-            <!-- <span class="tooltiptext">{{columHide}}</span> -->
-          </mat-radio-button>
-        </mat-radio-group>
-      </div>
-    </div>
+    <table mat-table #table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="name">
+        <div class="tabCell">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="taskName">{{columNameTitle}}</th>
+        </div>
+        <td mat-cell *matCellDef="let element" class="taskName"> {{ element.title }}</td>
+      </ng-container>
 
+      <ng-container matColumnDef="priority">
+        <th mat-header-cell *matHeaderCellDef #priority mat-sort-header>{{columPriorityTitle}}</th>
+        <td mat-cell *matCellDef="let element">
+          <form>
+            <mat-form-field class="select">
+              <mat-select placeholder="{{element.priority}}" class="select">
+                <mat-option value="{{columPriorityTitleValue1}}" #opt1 (click)="priorityUdate(element.$key, opt1.value)">{{columPriorityTitleValue1}}</mat-option>
+                <mat-option value="{{columPriorityTitleValue2}}" #opt2 (click)="priorityUdate(element.$key, opt2.value)">{{columPriorityTitleValue2}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </form>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{columDateTitle}}</th>
+        <td mat-cell *matCellDef="let element" class="tableCell"> {{element.date | date:'yyyy-MM-dd HH:mm'}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <div class="tabCell">.</div>
+        <td mat-cell *matCellDef="let element">
+          <i class="material-icons materialIconsDelete" (click)="deletingTask(element.$key)"> delete</i>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns" class="footer"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="footer"></tr>
+    </table>
+
+    <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true">
+    </mat-paginator>
   </div>
-
-  <table mat-table #table [dataSource]="dataSource" matSort>
-    <ng-container matColumnDef="name">
-      <div class="tabCell">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header class="taskName">{{columNameTitle}}</th>
-      </div>
-      <td mat-cell *matCellDef="let element" class="taskName"> {{ element.title }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="priority">
-      <th mat-header-cell *matHeaderCellDef #priority mat-sort-header>{{columPriorityTitle}}</th>
-      <td mat-cell *matCellDef="let element">
-        <form>
-          <mat-form-field class="select">
-            <mat-select placeholder= "{{element.priority}}" class="select">
-              <mat-option value="{{columPriorityTitleValue1}}" #opt1 (click)="priorityUdate(element.$key, opt1.value)">{{columPriorityTitleValue1}}</mat-option>
-              <mat-option value="{{columPriorityTitleValue2}}" #opt2 (click)="priorityUdate(element.$key, opt2.value)">{{columPriorityTitleValue2}}</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </form>
-      </td>
-    </ng-container>
-
-    <ng-container matColumnDef="date">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>{{columDateTitle}}</th>
-      <td mat-cell *matCellDef="let element" class="tableCell"> {{element.date | date:'yyyy-MM-dd HH:mm'}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="delete">
-      <th mat-header-cell *matHeaderCellDef></th>
-      <div class="tabCell">.</div>
-      <td mat-cell *matCellDef="let element">
-        <i class="material-icons materialIconsDelete" (click)="deletingTask(element.$key)"> delete</i>
-      </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns" class="footer"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="footer"></tr>
-  </table>
-
-  <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true">
-  </mat-paginator>
 </div>

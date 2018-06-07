@@ -2,17 +2,17 @@
   box-sizing: border-box;
 }
 
+.container {
+  width: 100%;
+}
+
 h2 {
   text-align: center;
 }
 
-
 mat-card {
-  width: 98%;
-  margin-left: 1%;
-  margin-top: 1%;
-  margin-right: 1%;
-  margin-bottom: 0px;
+  width: 100%;
+  margin-bottom: 5px;
   padding: 0;
   text-align: center;
   background-color: rgb(248, 245, 245);
@@ -79,7 +79,7 @@ mat-card {
 .langVer {
   margin: auto;
   min-width: 27px;
-  max-width: 27px;;
+  max-width: 27px;
   width: 27px;
   padding-right: 85px;
   /* margin-left: 0%; */
@@ -96,8 +96,8 @@ mat-card {
 .verFlag {
   padding-top: 2px;
   /* margin: auto; */
-  width:25px;
-  height:15px;
+  width: 25px;
+  height: 15px;
   border: 1px solid black;
 }
 
@@ -244,7 +244,7 @@ i {
   padding-left: 5px;
 }
 
-.tableCell{
+.tableCell {
   font-size: 80%;
   /* background: rgb(166, 130, 199); */
   padding-left: 5px;
