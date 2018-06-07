@@ -1,15 +1,15 @@
 <div class="container">
   <div class="mat-elevation-z13 taskList">
-      <h2>{{ appTitle }}</h2>
-      <mat-card>
-          <mat-card-content>
-            <mat-form-field class="inputField">
-              <input matInput placeholder="{{taskPlaceholder}}" #task (keyup.enter)="addTask(task)" [(ngModel)]="value">
-              <mat-icon *ngIf="value" matSuffix aria-label="Clear" (click)="value=''" class="deleteIconn">close</mat-icon>
-            </mat-form-field>
-            <i class="material-icons taskPlus" (click)="addTask(task)"> add</i>
-          </mat-card-content>
-        </mat-card>
+    <h2>{{ appTitle }}</h2>
+    <mat-card>
+      <mat-card-content>
+        <mat-form-field class="inputField">
+          <input matInput placeholder="{{taskPlaceholder}}" #task (keyup.enter)="addTask(task)" [(ngModel)]="value">
+          <mat-icon *ngIf="value" matSuffix aria-label="Clear" (click)="value=''" class="deleteIconn">close</mat-icon>
+        </mat-form-field>
+        <i class="material-icons taskPlus" (click)="addTask(task)"> add</i>
+      </mat-card-content>
+    </mat-card>
 
     <div class="header2">
       <mat-form-field class="searchField">
@@ -46,10 +46,8 @@
 
     <table mat-table #table [dataSource]="dataSource" matSort>
       <ng-container matColumnDef="name">
-        <div class="tabCell">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header class="taskName">{{columNameTitle}}</th>
-        </div>
-        <td mat-cell *matCellDef="let element" class="taskName"> {{ element.title }}</td>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header >{{columNameTitle}}</th>
+        <td mat-cell *matCellDef="let element" > {{ element.name }}</td>
       </ng-container>
 
       <ng-container matColumnDef="priority">

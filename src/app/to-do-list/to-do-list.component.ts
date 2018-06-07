@@ -91,7 +91,6 @@ export class ToDoListComponent implements OnInit {
 
   addTask(task) {
     if (task.value.length > 0) {
-      console.log(task.value);
       this.taskId++;
       this.todoListService.addTask(
         task.value,
