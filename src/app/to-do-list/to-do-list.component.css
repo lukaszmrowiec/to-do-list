@@ -6,6 +6,26 @@
   width: 100%;
 }
 
+/* .aapTitle {
+  background-color: rgb(248, 245, 245);
+} */
+
+.manuIcon {
+  position: absolute;
+  left: 5%;
+  font-size: 150%;
+}
+
+.mat-menu-item {
+  font-size: 70%;
+  width: 105px;
+}
+
+.language {
+  font-size: 70%;
+  width: 80px;
+}
+
 h2 {
   text-align: center;
 }
@@ -97,7 +117,7 @@ mat-card {
 }
 
 .verFlag {
-  padding-top: 2px;
+  /* padding-top: 10px; */
   /* margin: auto; */
   width: 25px;
   height: 15px;
@@ -124,6 +144,9 @@ mat-card {
 .butonSwitcher {
   position: relative;
   display: inline-block;
+  width: 60px;
+  padding-top: 3%;
+  /* background: yellowgreen; */
 }
 
 .tooltip {
@@ -248,7 +271,7 @@ i {
 }
 
 .tableCell {
-  font-size: 80%;
+  font-size: 70%;
   /* background: rgb(166, 130, 199); */
   padding-left: 5px;
 }

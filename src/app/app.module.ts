@@ -1,5 +1,5 @@
 import { BrowserModule } from "@angular/platform-browser";
-import { Directive,NgModule } from "@angular/core";
+import { Directive, NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatTableModule } from "@angular/material";
@@ -9,13 +9,14 @@ import { MatInputModule } from "@angular/material";
 // import { MatPaginatorModule } from "@angular/material/paginator";
 import { FormsModule } from "@angular/forms";
 import { MatCardModule } from "@angular/material/card";
-import {MatSelectModule} from '@angular/material/select';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatRadioModule} from '@angular/material/radio';
-import { MatPaginatorModule, MatPaginatorIntl} from '@angular/material';
-import { MatPaginatorIntlCro } from './matPaginatorIntlCroClass'
+import { MatSelectModule } from "@angular/material/select";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatIconModule } from "@angular/material/icon";
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatRadioModule } from "@angular/material/radio";
+import { MatPaginatorModule, MatPaginatorIntl } from "@angular/material";
+import { MatPaginatorIntlCro } from "./matPaginatorIntlCroClass";
+import { MatMenuModule } from "@angular/material/menu";
 
 import { AppComponent } from "./app.component";
 import { ToDoListComponent } from "./to-do-list/to-do-list.component";
@@ -42,16 +43,14 @@ import { environment } from "../environments/environment";
     MatToolbarModule,
     MatIconModule,
     MatCheckboxModule,
-    MatRadioModule
-
+    MatRadioModule,
+    MatMenuModule
   ],
 
   // exports: [
   //   MatTooltipModule
   // ],
-  providers: [{ provide: MatPaginatorIntl, useClass: MatPaginatorIntlCro}],
+  providers: [{ provide: MatPaginatorIntl, useClass: MatPaginatorIntlCro }],
   bootstrap: [AppComponent]
 })
-
 export class AppModule {}
-

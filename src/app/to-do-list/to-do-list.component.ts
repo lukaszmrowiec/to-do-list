@@ -19,7 +19,8 @@ export class ToDoListComponent implements OnInit {
   taskId: number = 0;
   importanceLlevel: string = "Normal";
   value = "";
-
+  lang: string = "Language";
+  cols: string = "Columns";
   appTitle: string = "To Do List";
   taskPlaceholder: string = "Enter task...";
   searchPlaceholder: string = "Search...";
@@ -103,6 +104,8 @@ export class ToDoListComponent implements OnInit {
   }
 
   changeLangVerToPl() {
+    this.lang = "Język";
+    this.cols = "Kolumny";
     this.appTitle = "Lista zadań";
     this.taskPlaceholder = "Wpisz zadanie...";
     this.searchPlaceholder = "Szukaj...";
@@ -122,6 +125,8 @@ export class ToDoListComponent implements OnInit {
 
   changeLangVerToEn() {
     this.appTitle = "To Do List";
+    this.lang = "Language";
+    this.cols = "Columns";
     this.taskPlaceholder = "Enter task...";
     this.searchPlaceholder = "Search...";
     this.show = "Show";
