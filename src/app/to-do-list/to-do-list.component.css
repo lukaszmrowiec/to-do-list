@@ -22,6 +22,7 @@ mat-card {
   width: 40%;
   padding-top: 5px;
   font-size: 100%;
+  margin: auto;
 }
 
 .deleteIconn {
@@ -39,10 +40,11 @@ mat-card {
 .taskPlus {
   font-size: 170%;
   font-weight: 900;
-  margin-left: 5%;
-  display: inline-flex;
-  vertical-align: middle;
-  align-items: center;
+  position: absolute;
+  right: 20%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: auto;
 }
 
 .header2 {
@@ -66,9 +68,10 @@ mat-card {
 } */
 
 .searchField {
-  width: 50%;
+  width: 40%;
   margin-left: 2%;
   font-size: 90%;
+  margin: auto;
   /* background: rgba(55, 175, 91, 0.397); */
 }
 
