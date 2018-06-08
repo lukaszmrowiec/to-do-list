@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyD1J3j8wIELmwtYm4QWlzwDL2Iyl7QBx6Y",
-    authDomain: "todolistapp-ver2.firebaseapp.com",
-    databaseURL: "https://todolistapp-ver2.firebaseio.com",
-    projectId: "todolistapp-ver2",
-    storageBucket: "todolistapp-ver2.appspot.com",
-    messagingSenderId: "187979300033"
+    apiKey: "AIzaSyCBypFg9LNS2DN33Pl036BVXKcyzZxstco",
+    authDomain: "dragdroptouch.firebaseapp.com",
+    databaseURL: "https://dragdroptouch.firebaseio.com",
+    projectId: "dragdroptouch",
+    storageBucket: "dragdroptouch.appspot.com",
+    messagingSenderId: "37574712628"
   }
 };
 
