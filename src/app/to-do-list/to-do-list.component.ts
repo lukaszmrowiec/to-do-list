@@ -14,12 +14,13 @@ import { MatPaginatorIntlCro } from "../matPaginatorIntlCroClass";
 export class ToDoListComponent implements OnInit {
   toDoListArray: any[];
   // displayedColumns = ["name"];
-  displayedColumns = ["name", "priority", "date", "delete"];
+  displayedColumns = ["checkBox", "name", "priority", "date", "delete"];
   dataSource;
   taskId: number = 0;
   importanceLlevel: string = "Normal";
   value = "";
   lang: string = "Language";
+  options: string = "Options";
   cols: string = "Columns";
   appTitle: string = "To Do List";
   taskPlaceholder: string = "Enter task...";
@@ -37,6 +38,7 @@ export class ToDoListComponent implements OnInit {
   paginatorItemsPerPage: string;
   langVer: string = "eng";
   taskPriority: string;
+  tasksNumber: number;
 
   constructor(
     private todoListService: ToDoListService,
@@ -58,6 +60,7 @@ export class ToDoListComponent implements OnInit {
           this.toDoListArray.push(x);
         });
         this.getFireData();
+        this.tasksNumber = this.toDoListArray.length;
       });
   }
 
@@ -105,6 +108,7 @@ export class ToDoListComponent implements OnInit {
 
   changeLangVerToPl() {
     this.lang = "Język";
+    this.options = "Opcje";
     this.cols = "Kolumny";
     this.appTitle = "Lista zadań";
     this.taskPlaceholder = "Wpisz zadanie...";
@@ -126,6 +130,7 @@ export class ToDoListComponent implements OnInit {
   changeLangVerToEn() {
     this.appTitle = "To Do List";
     this.lang = "Language";
+    this.options = "Options";
     this.cols = "Columns";
     this.taskPlaceholder = "Enter task...";
     this.searchPlaceholder = "Search...";
@@ -141,6 +146,11 @@ export class ToDoListComponent implements OnInit {
     // this.paginatorItemsPerPage = "Items par page:";
     this.langVer = "eng";
     this.replaceImportanceLlevelLang();
+  }
+
+  changeStatus($key: string, isChecked) {
+    console.log(isChecked);
+    this.todoListService.checkOrUnChecked($key, !isChecked);
   }
 
   priorityUdate($key: string, option: string) {

@@ -24,6 +24,7 @@ export class ToDoListService {
   addTask(title: string, taskId: number, importanceLlevel) {
     this.today = Date.now();
     this.toDoList.push({
+      isChecked: false,
       name: title,
       id: taskId,
       date: this.today,
@@ -35,13 +36,18 @@ export class ToDoListService {
     this.toDoList.update(key, value);
   }
 
+  checkOrUnChecked(key: string, flag: boolean) {
+    console.log(key);
+    this.toDoList.update(key, {isChecked: flag});
+  }
+
   removeTask($key: string) {
     this.toDoList.remove($key);
   }
 }
 
-export interface Task {
-  id: number;
-  name: string;
-  date: Date
-}
+// export interface Task {
+//   id: number;
+//   name: string;
+//   date: Date
+// }

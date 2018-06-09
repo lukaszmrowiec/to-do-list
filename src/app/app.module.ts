@@ -17,6 +17,8 @@ import { MatRadioModule } from "@angular/material/radio";
 import { MatPaginatorModule, MatPaginatorIntl } from "@angular/material";
 import { MatPaginatorIntlCro } from "./matPaginatorIntlCroClass";
 import { MatMenuModule } from "@angular/material/menu";
+import { MatExpansionModule } from "@angular/material/expansion";
+import { MatBadgeModule } from "@angular/material/badge";
 
 import { AppComponent } from "./app.component";
 import { ToDoListComponent } from "./to-do-list/to-do-list.component";
@@ -44,7 +46,9 @@ import { environment } from "../environments/environment";
     MatIconModule,
     MatCheckboxModule,
     MatRadioModule,
-    MatMenuModule
+    MatMenuModule,
+    MatExpansionModule,
+    MatBadgeModule
   ],
 
   // exports: [
