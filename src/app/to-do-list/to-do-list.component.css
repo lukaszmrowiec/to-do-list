@@ -263,6 +263,11 @@ i {
   /* background: rgba(28, 57, 185, 0.521); */
 }
 
+.statusIcon {
+  width: 23px;
+  padding-right: 1%;
+}
+
 .mat-column-date {
   /* background: rgba(128, 128, 128, 0.767); */
   max-width: 70px;

@@ -14,7 +14,7 @@ import { MatPaginatorIntlCro } from "../matPaginatorIntlCroClass";
 export class ToDoListComponent implements OnInit {
   toDoListArray: any[];
   // displayedColumns = ["name"];
-  displayedColumns = ["checkBox", "name", "priority", "date", "delete"];
+  displayedColumns = ["checkBox", "name", "isChecked", "priority", "date", "delete"];
   dataSource;
   taskId: number = 0;
   importanceLlevel: string = "Normal";
@@ -39,6 +39,8 @@ export class ToDoListComponent implements OnInit {
   langVer: string = "eng";
   taskPriority: string;
   tasksNumber: number;
+  todoTasksNumber: number;
+  doneTasksNumber: number;
 
   constructor(
     private todoListService: ToDoListService,
@@ -65,7 +67,7 @@ export class ToDoListComponent implements OnInit {
   }
 
   showColumns() {
-    this.displayedColumns = ["name", "priority", "date", "delete"];
+    this.displayedColumns = ["checkBox", "name", "isChecked", "priority", "date", "delete"];
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.getFireData();
