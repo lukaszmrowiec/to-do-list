@@ -63,9 +63,9 @@ export class ToDoListComponent implements OnInit {
           x["$key"] = element.key;
           this.toDoListArray.push(x);
         });
-        this.getFireData();
         this.showToDoTasks();
         this.showDoneTasks();
+        this.getFireData();
         this.tasksNumber = this.toDoListArray.length;
       });
   }

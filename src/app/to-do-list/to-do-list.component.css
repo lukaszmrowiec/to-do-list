@@ -17,7 +17,7 @@
 }
 
 .otions {
-  position: absolute;
+  /* position: absolute; */
   margin-left: 4%;
   cursor: pointer;
 }
@@ -113,11 +113,49 @@ button {
   margin-right: 2%;
 } */
 
+.bages {
+  margin-top: 2px;
+  /* width: 2rem;
+  height: 2rem;
+  z-index: 1;
+  font-size: 70%; */
+}
+
+.bagesToDo{
+  margin-top: 2px;
+  /* width: 2rem;
+  height: 2rem;
+  z-index: 1;
+  font-size: 70%; */
+}
+
 .badge {
-  width: 5rem;
+  /* width: 7rem; */
   /* float: right; */
-  margin-right: 10px;
-  padding: 0;
+  padding-right: 10px;
+  /* margin-right: 10px; */
+  font-size: 70%;
+  text-align: center;
+}
+
+.badgeButton {
+  width: 3rem;
+  height: 80%;
+  margin-right: 2%;
+  border-radius: 15px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.badgeButton:hover {
+  background-color: #ebe6e6;
+  box-shadow: 1px 3px #888888;
+}
+
+.badgeButton:active {
+  background-color: #ebe6e6;
+  box-shadow: 1px 3px #888888;
+  border: 0;
 }
 
 
@@ -125,6 +163,7 @@ button {
   width: 40%;
   font-size: 90%;
   margin: auto;
+  margin-left: 10px;
   /* background: rgba(55, 175, 91, 0.397); */
 }
 
@@ -134,12 +173,14 @@ button {
 
 .langVerSwitcher {
   position: absolute;
-  width: 80px;
-  top: 2%;
-  right: 1%;
+  width: 50px;
+  top: 2.5%;
+  right: 4.3%;
   font-size: 90%;
   margin: auto;
-  z-index: 1;
+  padding: 0;
+  /* z-index: 1; */
+  /* background: yellowgreen; */
 }
 
 
@@ -272,6 +313,7 @@ i {
 
 .statusIcon {
   width: 23px;
+  height: 22px;
   padding-right: 1%;
 }
 

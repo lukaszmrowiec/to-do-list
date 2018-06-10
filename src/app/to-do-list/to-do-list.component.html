@@ -1,16 +1,16 @@
 <div class="container">
   <div class="mat-elevation-z13 taskList">
     <div class="aapTitle">
-      <aside class="otions" [matMenuTriggerFor]="appOptions">{{options}}</aside>
-      <!-- <i class="material-icons manuIcon" [matMenuTriggerFor]="appOptions"> menu</i> -->
+      <!-- <aside class="otions" [matMenuTriggerFor]="appOptions">{{options}}</aside> -->
+      <i class="material-icons manuIcon" [matMenuTriggerFor]="appOptions"> menu</i>
       <!-- <button mat-button [matMenuTriggerFor]="appOptions" class="otions">Obcje</button> -->
 
       <mat-menu #appOptions="matMenu" class="options">
-        <button mat-menu-item [matMenuTriggerFor]="language">{{lang}}</button>
+        <!-- <button mat-menu-item [matMenuTriggerFor]="language">{{lang}}</button> -->
         <button mat-menu-item [matMenuTriggerFor]="columns">{{cols}}</button>
       </mat-menu>
 
-      <mat-menu #language="matMenu">
+      <mat-menu #language="matMenu" class="optionsManu">
         <div>
           <button mat-menu-item (click)="changeLangVerToPl()" class="butonSwitcher">PL</button>
           <img src="../../assets//images/plFlag.png" alt="Polish version" class="verFlag">
@@ -55,22 +55,26 @@
         <input matInput (keyup)="applyFilter($event.target.value)" placeholder="{{searchPlaceholder}}">
       </mat-form-field>
 
-      <p>
-        <button mat-raised-button matBadgeColor="none" class="badge" matBadge="{{tasksNumber}}" matBadgePosition="before" (click)="getFireData()">
-          All
-        </button>
+      <p class="bages">
+        <span class="w3-badge w3-small w3-black">{{tasksNumber}}</span>
+      </p>
+      <p class="badge">
+        <button (click)="getFireData()" class="badgeButton">All</button>
       </p>
 
-      <p>
-    <button mat-raised-button matBadgeColor="warn" class="badge" matBadge="{{todoTasksNumber}}" matBadgePosition="before" (click)="showToDoTasks()">
-          To Do
-        </button>
+      <p class="bages">
+        <span class="w3-badge w3-small w3-red bagesToDo">{{todoTasksNumber}}</span>
+      </p>
+      <p class="badge">
+        <button class="badgeButton" (click)="showToDoTasks()">ToDo</button>
       </p>
 
-      <p>
-        <button mat-raised-button color="primary" class="badge" matBadge="{{doneTasksNumber}}" matBadgePosition="before" (click)="showDoneTasks()">
-          Done
-        </button>
+      <p class="bages">
+          <span class="w3-badge w3-small w3-indigo">{{doneTasksNumber}}</span>
+      </p>
+
+      <p class="badge">
+        <button class="badgeButton"(click)="showDoneTasks()">Done</button>
       </p>
     </div>
 
@@ -97,18 +101,22 @@
       </ng-container>
 
       <ng-container matColumnDef="isChecked">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header><i class="material-icons">fiber_manual_record</i></th>
-          <td mat-cell *matCellDef="let element">
-            <span *ngIf="!element.isChecked; else changeIcon" (click)="changeStatus(element.$key, element.isChecked)">
-                <img src="../../assets//images/circre.png" alt="English version" class="statusIcon">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          <span>
+            <img src="../../assets//images/circre4.png" alt="English version" class="statusIcon">
+          </span>
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <span *ngIf="!element.isChecked; else changeIcon" (click)="changeStatus(element.$key, element.isChecked)">
+            <img src="../../assets//images/circre1.png" alt="English version" class="statusIcon">
+          </span>
+          <ng-template #changeIcon>
+            <span (click)="changeStatus(element.$key, element.isChecked)">
+              <img src="../../assets//images/circre2.png" alt="English version" class="statusIcon">
             </span>
-            <ng-template #changeIcon>
-              <span (click)="changeStatus(element.$key, element.isChecked)" class="statusIcon">
-                  <img src="../../assets//images/circre2.png" alt="English version" class="statusIcon">
-              </span>
-            </ng-template>
-          </td>
-        </ng-container>
+          </ng-template>
+        </td>
+      </ng-container>
 
       <ng-container matColumnDef="priority">
         <th mat-header-cell *matHeaderCellDef #priority mat-sort-header>{{columPriorityTitle}}</th>
