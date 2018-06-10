@@ -13,6 +13,8 @@ import { MatPaginatorIntlCro } from "../matPaginatorIntlCroClass";
 })
 export class ToDoListComponent implements OnInit {
   toDoListArray: any[];
+  toDoTaks: any[];
+  doneTasks: any[];
   // displayedColumns = ["name"];
   displayedColumns = ["checkBox", "name", "isChecked", "priority", "date", "delete"];
   dataSource;
@@ -62,6 +64,8 @@ export class ToDoListComponent implements OnInit {
           this.toDoListArray.push(x);
         });
         this.getFireData();
+        this.showToDoTasks();
+        this.showDoneTasks();
         this.tasksNumber = this.toDoListArray.length;
       });
   }
@@ -73,6 +77,30 @@ export class ToDoListComponent implements OnInit {
     this.getFireData();
     // this.columns = true;
     // return this.displayedColumns = ["name", "priority", "date", "delete"];
+  }
+
+  showToDoTasks() {
+    this.toDoTaks = [];
+    for(let i =0; i < this.toDoListArray.length; i++) {
+      if(!this.toDoListArray[i].isChecked) {
+        this.toDoTaks.push(this.toDoListArray[i]);
+      }
+    }
+    this.dataSource = this.toDoTaks;
+    this.todoTasksNumber = this.toDoTaks.length;
+    console.log(this.toDoTaks.length);
+  }
+
+  showDoneTasks() {
+    this.doneTasks = [];
+    for(let i =0; i < this.toDoListArray.length; i++) {
+      if(this.toDoListArray[i].isChecked) {
+        this.doneTasks.push(this.toDoListArray[i]);
+      }
+    }
+    this.dataSource = this.doneTasks;
+    this.doneTasksNumber = this.doneTasks.length;
+    console.log(this.doneTasks.length);
   }
 
   hideColumns() {
