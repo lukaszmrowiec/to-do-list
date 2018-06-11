@@ -40,6 +40,7 @@ export class ToDoListComponent implements OnInit {
   columPriorityTitleValue1: string = "Normal";
   columPriorityTitleValue2: string = "High";
   columDateTitle: string = "Date";
+  taskDetails: string = "Task details";
   paginatorItemsPerPage: string;
   langVer: string = "eng";
   taskPriority: string;
@@ -73,6 +74,27 @@ export class ToDoListComponent implements OnInit {
       });
   }
 
+  getFireData() {
+    this.dataSource = new MatTableDataSource(this.toDoListArray);
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+    return this.dataSource;
+  }
+
+  showDetails() {
+    this.displayedColumns = ["details"];
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+    // this.columns = false;
+  }
+
+  hideDetails() {
+    this.displayedColumns = ["checkBox", "name", "isChecked", "priority", "date", "delete"];
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+    // this.columns = false;
+  }
+
   showColumns() {
     this.displayedColumns = ["checkBox", "name", "isChecked", "priority", "date", "delete"];
     this.dataSource.sort = this.sort;
@@ -82,7 +104,17 @@ export class ToDoListComponent implements OnInit {
     // return this.displayedColumns = ["name", "priority", "date", "delete"];
   }
 
+  hideColumns() {
+    this.displayedColumns = ["name"];
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+    this.getFireData();
+    // this.columns = true;
+    // return this.displayedColumns = ["name", "priority", "date", "delete"];
+  }
+
   showToDoTasks() {
+    this.displayedColumns = ["checkBox", "name", "isChecked", "priority", "date", "delete"];
     this.toDoTaks = [];
     for(let i =0; i < this.toDoListArray.length; i++) {
       if(!this.toDoListArray[i].isChecked) {
@@ -91,10 +123,10 @@ export class ToDoListComponent implements OnInit {
     }
     this.dataSource = this.toDoTaks;
     this.todoTasksNumber = this.toDoTaks.length;
-    console.log(this.toDoTaks.length);
   }
 
   showDoneTasks() {
+    this.displayedColumns = ["checkBox", "name", "isChecked", "priority", "date", "delete"];
     this.doneTasks = [];
     for(let i =0; i < this.toDoListArray.length; i++) {
       if(this.toDoListArray[i].isChecked) {
@@ -103,21 +135,6 @@ export class ToDoListComponent implements OnInit {
     }
     this.dataSource = this.doneTasks;
     this.doneTasksNumber = this.doneTasks.length;
-    console.log(this.doneTasks.length);
-  }
-
-  hideColumns() {
-    this.displayedColumns = ["name"];
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-    // this.columns = false;
-  }
-
-  getFireData() {
-    this.dataSource = new MatTableDataSource(this.toDoListArray);
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-    return this.dataSource;
   }
 
   applyFilter(filterValue: string) {
@@ -140,6 +157,7 @@ export class ToDoListComponent implements OnInit {
   }
 
   changeLangVerToPl() {
+    this.taskDetails= "Szczegóły zadania";
     this.lang = "Język";
     this.options = "Opcje";
     this.cols = "Kolumny";
@@ -164,6 +182,7 @@ export class ToDoListComponent implements OnInit {
   }
 
   changeLangVerToEn() {
+    this.taskDetails= "Task details";
     this.appTitle = "To Do List";
     this.lang = "Language";
     this.options = "Options";

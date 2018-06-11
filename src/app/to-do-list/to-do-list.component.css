@@ -53,6 +53,12 @@
   background: rgb(163, 64, 86);
 } */
 
+.detailButton {
+  width: 11rem;
+  min-width: 11rem;
+  max-width: 11rem;
+}
+
 .taskList {
   display: table;
   margin-top: 1%;
@@ -117,9 +123,9 @@ h3 {
 
 .options {
   /* position: absolute; */
-  margin-left: 4%;
+  /* margin-left: 4%; */
   cursor: pointer;
-  margin: auto;
+  /* margin: auto; */
 }
 
 .mat-menu-item {
@@ -365,17 +371,27 @@ i {
   /* background: rgba(158, 153, 85, 0.521); */
 }
 
+.mat-column-isChecked {
+  width: 30px;
+  min-width: 30px;
+  max-width: 30px;
+  /* padding-right: 115px; */
+  /* padding-right: 10px; */
+  /* background: rgba(158, 153, 85, 0.521); */
+}
+
 .mat-column-priority {
   /* background: rgba(128, 128, 128, 0.521); */
-  max-width: 88px;
-  min-width: 85px;
-  width: 85px;
-  padding-right: 20px;
+  max-width: 60px;
+  min-width: 40px;
+  width: 40px;
+  padding-right: 80px;
+  /* padding-left: 20px; */
 }
 .select {
   max-width: 70px;
-  min-width: 70px;
-  width: 70px;
+  min-width: 50px;
+  width: 60px;
   font-size: 80%;
   /* background: rgba(28, 57, 185, 0.521); */
 }
@@ -390,14 +406,14 @@ i {
   /* background: rgba(128, 128, 128, 0.767); */
   max-width: 70px;
   min-width: 80px;
-  width: 80px;
-  padding-left: 5px;
+  width: 50px;
+  padding-left: 15px;
 }
 
 .tableCell {
   font-size: 70%;
   /* background: rgb(166, 130, 199); */
-  padding-left: 5px;
+  padding-left: 10px;
 }
 
 .mat-column-delete {

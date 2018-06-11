@@ -2,13 +2,12 @@
   <div class="mat-elevation-z13 taskList">
     <div class="header1">
       <div class="manuIcon col-2">
-        <!-- <aside class="otions" [matMenuTriggerFor]="appOptions">{{options}}</aside> -->
         <i class="material-icons manuIconEl" [matMenuTriggerFor]="appOptions"> menu</i>
-        <!-- <button mat-button [matMenuTriggerFor]="appOptions" class="otions">Obcje</button> -->
 
-        <mat-menu #appOptions="matMenu" class="options">
+        <mat-menu #appOptions="matMenu" class="detailButton">
           <!-- <button mat-menu-item [matMenuTriggerFor]="language">{{lang}}</button> -->
-          <button mat-menu-item [matMenuTriggerFor]="columns">{{cols}}</button>
+          <button mat-menu-item [matMenuTriggerFor]="details" class="detailButton" >{{taskDetails}}</button>
+          <button mat-menu-item [matMenuTriggerFor]="columns" class="detailButton" >{{cols}}</button>
         </mat-menu>
 
         <mat-menu #language="matMenu" class="optionsManu">
@@ -20,6 +19,11 @@
             <button mat-menu-item (click)="changeLangVerToEn()" class="butonSwitcher">Eng</button>
             <img src="../../assets//images/engFlag.png" alt="English version" class="verFlag">
           </div>
+        </mat-menu>
+
+        <mat-menu #details="matMenu">
+          <button mat-menu-item (click)="showDetails()">{{show}}</button>
+          <button mat-menu-item (click)="hideDetails()">{{hide}}</button>
         </mat-menu>
 
         <mat-menu #columns="matMenu">
@@ -59,7 +63,7 @@
     <div class="header2">
       <div class="searchField">
         <mat-form-field class="searchInput">
-          <input matInput  (keyup)="applyFilter($event.target.value)" placeholder="{{searchPlaceholder}}">
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="{{searchPlaceholder}}">
         </mat-form-field>
       </div>
 
@@ -71,7 +75,7 @@
               <span class="w3-badge w3-small w3-black badge">{{tasksNumber}}</span>
             </div>
             <div class="badgeButtonCointainer">
-              <button class="badgeButton" (click)="getFireData()">{{all}}</button>
+              <button class="badgeButton" (click)="showColumns()">{{all}}</button>
             </div>
           </div>
         </div>
@@ -119,7 +123,45 @@
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>{{columNameTitle}}</th>
         <td mat-cell *matCellDef="let element" class="taskName">
-          <span>{{ element.name }}</span>
+          {{ element.name }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="details">
+        <th mat-header-cell *matHeaderCellDef>{{columNameTitle}}</th>
+        <td mat-cell *matCellDef="let element" class="taskName">
+
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                  Zadanie : {{ element.name }}
+              </mat-expansion-panel-header>
+              <p>
+                  Właściciel zadania: ....
+              </p>
+              <p>
+                  Wykonawca zadania: ...
+              </p>
+              <p>
+                Data powstania zadania :  <strong> {{element.date | date:'yyyy-MM-dd HH:mm'}} </strong>
+              </p>
+              <p>
+                <mat-form-field>
+                  <input matInput [matDatepicker]="dp2" placeholder="Czas rozpoczącia zadania">
+                  <mat-datepicker-toggle matSuffix [for]="dp2"></mat-datepicker-toggle>
+                  <mat-datepicker #dp2 disabled="false"></mat-datepicker>
+                </mat-form-field>
+              </p>
+              <p>
+                <mat-form-field>
+                  <input matInput [matDatepicker]="dp3" placeholder="Czas zakończenia zadania">
+                  <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+                  <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+                </mat-form-field>
+              </p>
+
+            </mat-expansion-panel>
+          </mat-accordion>
         </td>
       </ng-container>
 
@@ -141,7 +183,7 @@
         </td>
       </ng-container>
 
-      <ng-container matColumnDef="priority">
+      <ng-container matColumnDef="priority" class="priorityColumn">
         <th mat-header-cell *matHeaderCellDef #priority mat-sort-header>{{columPriorityTitle}}</th>
         <td mat-cell *matCellDef="let element">
           <form>
