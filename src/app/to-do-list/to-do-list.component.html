@@ -36,10 +36,10 @@
         <div class="langIconGrup">
           <mat-radio-group>
             <mat-radio-button value="1" class="butonSwitcher" (click)="changeLangVerToPl()">
-              <img src="../../assets//images/plFlag.png" alt="Polish version" class="verFlag">
+              <img src="../../assets//images/plFlag.png" alt="Polish version" class="verFlag" (click)="changeLangVerToPl()">
             </mat-radio-button>
             <mat-radio-button value="2" class="butonSwitcher" (click)="changeLangVerToEn()">
-              <img src="../../assets//images/engFlag.png" alt="English version" class="verFlag">
+              <img src="../../assets//images/engFlag.png" alt="English version" class="verFlag" (click)="changeLangVerToEn()">
             </mat-radio-button>
           </mat-radio-group>
         </div>
@@ -58,8 +58,8 @@
 
     <div class="header2">
       <div class="searchField">
-        <mat-form-field>
-          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="{{searchPlaceholder}}">
+        <mat-form-field class="searchInput">
+          <input matInput  (keyup)="applyFilter($event.target.value)" placeholder="{{searchPlaceholder}}">
         </mat-form-field>
       </div>
 

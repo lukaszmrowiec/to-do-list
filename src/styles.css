@@ -14,8 +14,12 @@ body {
     /* margin: auto; */
     width: 41.66%;
     padding-left: 5%;
-    /* background: rgba(55, 175, 91, 0.397); */
   }
+
+  /* .searchField input {
+    width: 80%;
+    color: rgba(218, 195, 216, 0.397);
+  } */
   .countersButtons {
     width: 41.66%;
     /* background: rgba(55, 175, 91, 0.397); */
@@ -23,5 +27,20 @@ body {
   .counters {
     width: 70%;
     padding-left: 50px;
+  }
+  .searchInput {
+    min-width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .langVerSwitcher {
+    width: 25%;
+    font-size: 80%;
+  }
+
+  .langIconGrup {
+    padding-left: 0;
+    /* background-color: rgb(141, 40, 40); */
   }
 }
