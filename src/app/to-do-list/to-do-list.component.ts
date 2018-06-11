@@ -35,6 +35,7 @@ export class ToDoListComponent implements OnInit {
   hide: string = "Hide";
   columHide: string = "Hide columns";
   columNameTitle: string = "Task name";
+  columDetailsTitle: string = "Tasks details";
   columPriorityTitle: string = "Priority";
   columPriorityTitleValue: string = "Normal";
   columPriorityTitleValue1: string = "Normal";
@@ -172,6 +173,7 @@ export class ToDoListComponent implements OnInit {
     this.hide = "Ukryj";
     this.columHide = "Ukryj kolumny";
     this.columNameTitle = "Nazwa zadania";
+    this.columDetailsTitle = "Szczegóły zadań";
     this.columPriorityTitle = "Priorytet";
     this.columPriorityTitleValue1 = "Normalny";
     this.columPriorityTitleValue2 = "Wysoki";
@@ -197,6 +199,7 @@ export class ToDoListComponent implements OnInit {
     this.hide = "Hide";
     this.columHide = "Hide columns";
     this.columNameTitle = "Task name";
+    this.columDetailsTitle = "Tasks details";
     this.columPriorityTitle = "Priority";
     this.columPriorityTitleValue1 = "Normal";
     this.columPriorityTitleValue2 = "High";

@@ -2,12 +2,6 @@
   box-sizing: border-box;
 }
 
-/* @media screen and (max-width: 500px) {
-  div.example {
-    display: none;
-  }
-} */
-
 [class*="col-"] {
   float: left;
 }
@@ -69,10 +63,10 @@
   max-width: 95%;
 }
 
-.header1 {
-  /* background-color: rgb(248, 245, 245); */
-  /* background-color: rgb(38, 168, 70); */
-}
+/* .header1 {
+  background-color: rgb(248, 245, 245);
+ background-color: rgb(38, 168, 70);
+} */
 
 .header1::after {
   content: "";
@@ -234,11 +228,6 @@ button {
   /* font-size: 70%; */
 }
 
-.badgeLoc {
-  margin-left: 0px;
-  background: yellow;
-}
-
 .badgeButton {
   width: 5.4rem;
   height: 2rem;
@@ -382,18 +371,19 @@ i {
 
 .mat-column-priority {
   /* background: rgba(128, 128, 128, 0.521); */
-  max-width: 60px;
-  min-width: 40px;
-  width: 40px;
+  max-width: 70px;
+  min-width: 70px;
+  width: 70px;
   padding-right: 80px;
   /* padding-left: 20px; */
 }
 .select {
   max-width: 70px;
-  min-width: 50px;
-  width: 60px;
+  min-width: 70px;
+  width: 70px;
   font-size: 80%;
-  /* background: rgba(28, 57, 185, 0.521); */
+  margin-left: 5px;
+  /* background: rgba(201, 172, 9, 0.521); */
 }
 
 .statusIcon {

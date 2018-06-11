@@ -7,13 +7,18 @@ body {
 
 @media screen and (min-width: 600px) {
   .header2 {
+    background-color: rgb(253, 251, 251);
     display: flex;
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
   }
   .searchField {
     /* font-size: 90%; */
     /* margin: auto; */
-    width: 41.66%;
-    padding-left: 5%;
+    width: 45%;
+    /* padding-left: 5%; */
+    /* background: rgba(47, 139, 59, 0.973); */
   }
 
   /* .searchField input {
@@ -21,15 +26,17 @@ body {
     color: rgba(218, 195, 216, 0.397);
   } */
   .countersButtons {
-    width: 41.66%;
-    /* background: rgba(55, 175, 91, 0.397); */
+    width: 50%;
+    /* margin-left: 15%; */
+    /* background: rgba(27, 171, 190, 0.397); */
   }
   .counters {
-    width: 70%;
-    padding-left: 50px;
+    padding-right: 5px;
+    margin-right: 5px;
+    /* background: rgba(189, 209, 9, 0.973); */
   }
   .searchInput {
-    min-width: 100%;
+    min-width: 55%;
   }
 }
 
