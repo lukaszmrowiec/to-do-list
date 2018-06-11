@@ -28,18 +28,20 @@
         </mat-menu>
       </div>
 
-      <div class="aapTitle col-8"><h3>{{ appTitle }}</h3></div>
+      <div class="aapTitle col-8">
+        <h3>{{ appTitle }}</h3>
+      </div>
 
       <div class="langVerSwitcher col-2">
         <div class="langIconGrup">
-        <mat-radio-group>
-          <mat-radio-button value="1" class="butonSwitcher" (click)="changeLangVerToPl()">
-            <img src="../../assets//images/plFlag.png" alt="Polish version" class="verFlag">
-          </mat-radio-button>
-          <mat-radio-button value="2" class="butonSwitcher" (click)="changeLangVerToEn()">
-            <img src="../../assets//images/engFlag.png" alt="English version" class="verFlag">
-          </mat-radio-button>
-        </mat-radio-group>
+          <mat-radio-group>
+            <mat-radio-button value="1" class="butonSwitcher" (click)="changeLangVerToPl()">
+              <img src="../../assets//images/plFlag.png" alt="Polish version" class="verFlag">
+            </mat-radio-button>
+            <mat-radio-button value="2" class="butonSwitcher" (click)="changeLangVerToEn()">
+              <img src="../../assets//images/engFlag.png" alt="English version" class="verFlag">
+            </mat-radio-button>
+          </mat-radio-group>
         </div>
       </div>
     </div>
@@ -55,31 +57,48 @@
     </mat-card>
 
     <div class="header2">
-      <mat-form-field class="searchField">
-        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="{{searchPlaceholder}}">
-      </mat-form-field>
+      <div class="searchField">
+        <mat-form-field>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="{{searchPlaceholder}}">
+        </mat-form-field>
+      </div>
 
-      <p class="bages">
-        <span class="w3-badge w3-small w3-black">{{tasksNumber}}</span>
-      </p>
-      <p class="badge">
-        <button (click)="getFireData()" class="badgeButton">All</button>
-      </p>
+      <div class="countersButtons">
 
-      <p class="bages">
-        <span class="w3-badge w3-small w3-red bagesToDo">{{todoTasksNumber}}</span>
-      </p>
-      <p class="badge">
-        <button class="badgeButton" (click)="showToDoTasks()">ToDo</button>
-      </p>
+        <div class="col-4">
+          <div class="counters">
+            <div clase="badgeLoc">
+              <span class="w3-badge w3-small w3-black badge">{{tasksNumber}}</span>
+            </div>
+            <div class="badgeButtonCointainer">
+              <button class="badgeButton" (click)="getFireData()">{{all}}</button>
+            </div>
+          </div>
+        </div>
 
-      <p class="bages">
-        <span class="w3-badge w3-small w3-indigo">{{doneTasksNumber}}</span>
-      </p>
+        <div class="col-4">
+          <div class="counters">
+            <div clase="badgeLoc">
+              <span class="w3-badge w3-small w3-red">{{todoTasksNumber}}</span>
+            </div>
+            <div class="badgeButtonCointainer">
+              <button class="badgeButton" (click)="showToDoTasks()">{{toDo}}</button>
+            </div>
+          </div>
+        </div>
 
-      <p class="badge">
-        <button class="badgeButton" (click)="showDoneTasks()">Done</button>
-      </p>
+        <div class="col-4">
+          <div class="counters">
+            <div clase="badgeLoc">
+              <span class="w3-badge w3-small w3-indigo">{{doneTasksNumber}}</span>
+            </div>
+            <div class="badgeButtonCointainer">
+              <button class="badgeButton" (click)="showDoneTasks()">{{done}}</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
 
     <table mat-table #table [dataSource]="dataSource" matSort>

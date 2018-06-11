@@ -4,3 +4,24 @@ body {
   background-color: rgb(163, 163, 163);
   width: 100%;
 }
+
+@media screen and (min-width: 600px) {
+  .header2 {
+    display: flex;
+  }
+  .searchField {
+    /* font-size: 90%; */
+    /* margin: auto; */
+    width: 41.66%;
+    padding-left: 5%;
+    /* background: rgba(55, 175, 91, 0.397); */
+  }
+  .countersButtons {
+    width: 41.66%;
+    /* background: rgba(55, 175, 91, 0.397); */
+  }
+  .counters {
+    width: 70%;
+    padding-left: 50px;
+  }
+}

@@ -27,6 +27,9 @@ export class ToDoListComponent implements OnInit {
   appTitle: string = "To Do List";
   taskPlaceholder: string = "Enter task...";
   searchPlaceholder: string = "Search...";
+  all: string = "All";
+  toDo: string = "Do do";
+  done: string = "Done";
   show: string = "Show";
   columShow: string = "Show columns";
   hide: string = "Hide";
@@ -143,6 +146,9 @@ export class ToDoListComponent implements OnInit {
     this.appTitle = "Lista zadań";
     this.taskPlaceholder = "Wpisz zadanie...";
     this.searchPlaceholder = "Szukaj...";
+    this.all = "Wszystkie";
+    this.toDo = "Do zrobienia";
+    this.done = "Zrobione";
     this.show = "Pokaż";
     this.columShow = "Pokaż kolumny";
     this.hide = "Ukryj";
@@ -164,6 +170,9 @@ export class ToDoListComponent implements OnInit {
     this.cols = "Columns";
     this.taskPlaceholder = "Enter task...";
     this.searchPlaceholder = "Search...";
+    this.all = "All";
+    this.toDo = "To do";
+    this.done = "Done";
     this.show = "Show";
     this.columShow = "Show columns";
     this.hide = "Hide";
