@@ -1,42 +1,46 @@
 <div class="container">
   <div class="mat-elevation-z13 taskList">
-    <div class="aapTitle">
-      <!-- <aside class="otions" [matMenuTriggerFor]="appOptions">{{options}}</aside> -->
-      <i class="material-icons manuIcon" [matMenuTriggerFor]="appOptions"> menu</i>
-      <!-- <button mat-button [matMenuTriggerFor]="appOptions" class="otions">Obcje</button> -->
+    <div class="header1">
+      <div class="manuIcon col-2">
+        <!-- <aside class="otions" [matMenuTriggerFor]="appOptions">{{options}}</aside> -->
+        <i class="material-icons manuIconEl" [matMenuTriggerFor]="appOptions"> menu</i>
+        <!-- <button mat-button [matMenuTriggerFor]="appOptions" class="otions">Obcje</button> -->
 
-      <mat-menu #appOptions="matMenu" class="options">
-        <!-- <button mat-menu-item [matMenuTriggerFor]="language">{{lang}}</button> -->
-        <button mat-menu-item [matMenuTriggerFor]="columns">{{cols}}</button>
-      </mat-menu>
+        <mat-menu #appOptions="matMenu" class="options">
+          <!-- <button mat-menu-item [matMenuTriggerFor]="language">{{lang}}</button> -->
+          <button mat-menu-item [matMenuTriggerFor]="columns">{{cols}}</button>
+        </mat-menu>
 
-      <mat-menu #language="matMenu" class="optionsManu">
-        <div>
-          <button mat-menu-item (click)="changeLangVerToPl()" class="butonSwitcher">PL</button>
-          <img src="../../assets//images/plFlag.png" alt="Polish version" class="verFlag">
-        </div>
-        <div>
-          <button mat-menu-item (click)="changeLangVerToEn()" class="butonSwitcher">Eng</button>
-          <img src="../../assets//images/engFlag.png" alt="English version" class="verFlag">
-        </div>
-      </mat-menu>
+        <mat-menu #language="matMenu" class="optionsManu">
+          <div>
+            <button mat-menu-item (click)="changeLangVerToPl()" class="butonSwitcher">PL</button>
+            <img src="../../assets//images/plFlag.png" alt="Polish version" class="verFlag">
+          </div>
+          <div>
+            <button mat-menu-item (click)="changeLangVerToEn()" class="butonSwitcher">Eng</button>
+            <img src="../../assets//images/engFlag.png" alt="English version" class="verFlag">
+          </div>
+        </mat-menu>
 
-      <mat-menu #columns="matMenu">
-        <button mat-menu-item (click)="showColumns()">{{show}}</button>
-        <button mat-menu-item (click)="hideColumns()">{{hide}}</button>
-      </mat-menu>
+        <mat-menu #columns="matMenu">
+          <button mat-menu-item (click)="showColumns()">{{show}}</button>
+          <button mat-menu-item (click)="hideColumns()">{{hide}}</button>
+        </mat-menu>
+      </div>
 
-      <h2>{{ appTitle }}</h2>
+      <div class="aapTitle col-8"><h3>{{ appTitle }}</h3></div>
 
-      <div class="langVerSwitcher">
+      <div class="langVerSwitcher col-2">
+        <div class="langIconGrup">
         <mat-radio-group>
           <mat-radio-button value="1" class="butonSwitcher" (click)="changeLangVerToPl()">
             <img src="../../assets//images/plFlag.png" alt="Polish version" class="verFlag">
           </mat-radio-button>
-          <mat-radio-button value="2" class="spaceTop butonSwitcher" (click)="changeLangVerToEn()">
+          <mat-radio-button value="2" class="butonSwitcher" (click)="changeLangVerToEn()">
             <img src="../../assets//images/engFlag.png" alt="English version" class="verFlag">
           </mat-radio-button>
         </mat-radio-group>
+        </div>
       </div>
     </div>
 
@@ -70,11 +74,11 @@
       </p>
 
       <p class="bages">
-          <span class="w3-badge w3-small w3-indigo">{{doneTasksNumber}}</span>
+        <span class="w3-badge w3-small w3-indigo">{{doneTasksNumber}}</span>
       </p>
 
       <p class="badge">
-        <button class="badgeButton"(click)="showDoneTasks()">Done</button>
+        <button class="badgeButton" (click)="showDoneTasks()">Done</button>
       </p>
     </div>
 
